@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="jack_hearts" size="1.000000 1.371158" />
+    <ImageTarget name="jack_clubs" size="1.000000 1.394904" />
+    <ImageTarget name="queen_spades" size="1.000000 1.400000" />
+    <ImageTarget name="jack_diamonds" size="1.000000 1.403571" />
+    <ImageTarget name="jack_spades" size="1.000000 1.421669" />
+    <ImageTarget name="king_clubs" size="1.000000 1.390547" />
+    <ImageTarget name="king_diamonds" size="1.000000 1.434978" />
+    <ImageTarget name="king_spades" size="1.000000 1.372222" />
+    <ImageTarget name="queen_diamonds" size="1.000000 1.387324" />
+    <ImageTarget name="queen_hearts" size="1.000000 1.394537" />
+    <ImageTarget name="queen_clubs" size="1.000000 1.403509" />
+    <ImageTarget name="king_hearts" size="1.000000 1.424501" />
+  </Tracking>
+</QCARConfig>
