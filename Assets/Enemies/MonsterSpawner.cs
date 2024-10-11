@@ -38,7 +38,7 @@ public class MonsterSpawner : MonoBehaviour
         // Generate a random point on the perimeter of the circle
         Vector2 randomPoint = Random.insideUnitCircle.normalized * spawnRadius;
         Vector3 spawnPosition = new Vector3(randomPoint.x, 0, randomPoint.y) + castleCenter.position;
-
+        Debug.Log(gameManager.isNight);
         // get random monster prefab
         GameObject monsterPrefab = monsterPrefabs[Random.Range(0, monsterPrefabs.Count)];
 

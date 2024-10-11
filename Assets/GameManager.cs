@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public WeatherService weatherService;
     public List<GameObject> defenses;
-
+    
+    public bool WeatherServiceEnabled = true;
+    public bool isRaining;
+    public bool isNight;
     // Start is called before the first frame update
     void Start()
     {
+        if (WeatherServiceEnabled)
+        {
+            StartCoroutine(Init());
+        }
+        
         GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
-
         foreach (GameObject obj in allGameObjects)
         {
             if (obj.layer == LayerMask.NameToLayer("Defenses"))
@@ -19,7 +27,13 @@ public class GameManager : MonoBehaviour
             }
         }
 
+    }
 
+    IEnumerator Init()
+    {
+        yield return StartCoroutine(weatherService.Init());
+        isRaining = weatherService.IsRaining();
+        isNight = weatherService.IsNight();
     }
 
     void Update()
