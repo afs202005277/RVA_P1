@@ -36,7 +36,7 @@ public class BallController : MonoBehaviour
             if ((lastPosition - transform.position).magnitude < margin)
             {
                 // para quando o monstro for morto e desaparecer e ainda existirem bolas a caminho
-                //Destroy(gameObject);
+                Destroy(gameObject);
             }
         }
 
@@ -51,6 +51,7 @@ public class BallController : MonoBehaviour
         if (collision.gameObject.layer == layerMask)
         {
             // Destroy the cannonball
+            collision.gameObject.GetComponent<MonsterController>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

@@ -41,7 +41,7 @@ public abstract class DefensiveStructure : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Collider not found on the tower.");
+            //Debug.LogError("Collider not found on the tower.");
         }
     }
 

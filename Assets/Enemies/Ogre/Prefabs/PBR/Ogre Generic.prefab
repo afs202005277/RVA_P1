@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5674075356664803920}
   gameManager: {fileID: 0}
-  health: 20
+  health: 100
   speed: 1
   damage: 10
 --- !u!136 &2749959380670448585

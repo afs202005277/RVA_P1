@@ -25,6 +25,7 @@ public class TowerController : DefensiveStructure
 
             GameObject cannonball = Instantiate(projectilePrefab, highestPoint, transform.rotation);
             BallController cannonballScript = cannonball.GetComponent<BallController>();
+            cannonballScript.damage = attackDamage;
             if (cannonballScript != null)
             {
                 cannonballScript.SetTarget(currentTarget);
