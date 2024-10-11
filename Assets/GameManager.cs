@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
             StartCoroutine(Init());
         }
         
+        int currentDifficulty = PlayerPrefs.GetInt("difficulty", 1); // Default to "1" if not set
+        Debug.Log("Game Difficulty: " + currentDifficulty);
+
         GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
         foreach (GameObject obj in allGameObjects)
         {
