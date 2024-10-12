@@ -640,13 +640,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347b0fa17ae647142872e5240fcb3cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefabs:
-  - {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
-  - {fileID: 6697294229898335401, guid: 7dc7b54399d54194e9f2619f1832e8d5, type: 3}
-  - {fileID: 5674075356657402348, guid: 7e38136a601fead4a9e3d91f1163ff27, type: 3}
-  - {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
-  - {fileID: 3074657719725428346, guid: cbbcf6e267045b043ae0a5d0debc8280, type: 3}
-  - {fileID: 528104615065489744, guid: e3b746fef223ad24f83c99406d6087ca, type: 3}
   castleCenter: {fileID: 1003860722}
   spawnRadius: 50
   spawnRate: 3
@@ -2018,7 +2011,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8265c95982f53da4a9e9fd93e3abf898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moneytext: {fileID: 1543301084}
   defenses: []
+  monsterPrefabs:
+  - {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+  - {fileID: 6697294229898335401, guid: 7dc7b54399d54194e9f2619f1832e8d5, type: 3}
+  - {fileID: 5674075356657402348, guid: 7e38136a601fead4a9e3d91f1163ff27, type: 3}
+  - {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
+  - {fileID: 3074657719725428346, guid: cbbcf6e267045b043ae0a5d0debc8280, type: 3}
+  - {fileID: 528104615065489744, guid: e3b746fef223ad24f83c99406d6087ca, type: 3}
 --- !u!4 &1278329160
 Transform:
   m_ObjectHideFlags: 0
@@ -2715,7 +2716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 407, y: 0}
+  m_AnchoredPosition: {x: 287.1, y: 0}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1727510672

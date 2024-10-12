@@ -1679,7 +1679,7 @@ GameObject:
   - component: {fileID: 2749959380670448585}
   - component: {fileID: 1866996874310048699}
   m_Layer: 0
-  m_Name: Ogre Generic
+  m_Name: Ogre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

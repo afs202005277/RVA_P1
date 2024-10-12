@@ -691,7 +691,7 @@ GameObject:
   - component: {fileID: -8501639255098284458}
   - component: {fileID: 4818074380291410668}
   m_Layer: 0
-  m_Name: monster_scavenger_Skin_Gray
+  m_Name: Scavenger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    public List<GameObject> monsterPrefabs; // List of monster prefabs
     public Transform castleCenter;       // The center point (castle)
     public float spawnRadius = 20f;      // The radius of the perimeter circle
     public float spawnRate = 3f;         // How often zombies will spawn (in seconds)
@@ -40,7 +39,7 @@ public class MonsterSpawner : MonoBehaviour
         Vector3 spawnPosition = new Vector3(randomPoint.x, 0, randomPoint.y) + castleCenter.position;
 
         // get random monster prefab
-        GameObject monsterPrefab = monsterPrefabs[Random.Range(0, monsterPrefabs.Count)];
+        GameObject monsterPrefab = gameManager.monsterPrefabs[Random.Range(0, gameManager.monsterPrefabs.Count)];
 
         GameObject monster = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
 
