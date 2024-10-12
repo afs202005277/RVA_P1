@@ -110,4 +110,9 @@ public class GameManager : MonoBehaviour
 };
         return difficultySettings[difficulty];
     }
+
+    public DifficultySettings CurrentDifficultySettings
+    {
+        get { return currentDifficultySettings; }
+    }
 }

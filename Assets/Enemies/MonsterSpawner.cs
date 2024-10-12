@@ -9,6 +9,7 @@ public class MonsterSpawner : MonoBehaviour
     public float spawnRate = 3f;         // How often zombies will spawn (in seconds)
     public int maxEnemies = 10;       // The maximum number of enemies that can be spawned
     public GameManager gameManager;
+    public GameObject coinPopupPrefab;
 
     private float nextSpawnTime;
     private int enemyCount = 0;
@@ -47,7 +48,11 @@ public class MonsterSpawner : MonoBehaviour
         {
             monster.layer = layerMask;
         }
-        monster.GetComponent<MonsterController>().gameManager = gameManager;
+        MonsterController script = monster.GetComponent<MonsterController>();
+        script.gameManager = gameManager;
+        script.applyDifficultySettings(gameManager.CurrentDifficultySettings.MonsterSettings[monsterPrefab.name]);
+        script.coinPopupPrefab = coinPopupPrefab;
+        Debug.Log("Name: " + monsterPrefab.name);
 
         enemyCount++;
     }

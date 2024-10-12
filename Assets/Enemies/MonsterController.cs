@@ -1,19 +1,28 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
     public Animator animator;
     public GameManager gameManager;
-    public float health = 10f;
-    public float speed = 2f;
-    public float damage = 1f;
+    public float health;
+    public float speed;
+    public float damage;
     private GameObject currentDefense = null;
+
+    public GameObject coinPopupPrefab;
+    public Transform cameraTransform;
+    public float maxHeight = 1.5f;
+    public float duration = 1.0f;
+    private float coins;
 
     void Start()
     {
         animator.SetBool("isWalking", true);
+        cameraTransform = Camera.main.transform;
     }   
 
     void Update()
@@ -47,6 +56,14 @@ public class MonsterController : MonoBehaviour
         
     }
 
+    public void applyDifficultySettings(MonsterSettings settings)
+    {
+        this.damage *= settings.DamageModifier;
+        this.speed *= settings.SpeedModifier;
+        this.coins = settings.AbsoluteMoneyEarned;
+        this.health *= settings.HPModifier;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Defenses") && !currentDefense)
@@ -77,11 +94,40 @@ public class MonsterController : MonoBehaviour
         if (health <= 0)
         {
             animator.SetBool("died", true);
+            ShowCoinPopup(gameObject.transform.position, this.coins);
         }
     }
 
     public void KillEnemy()
     {
         Destroy(gameObject);
+    }
+
+    public void ShowCoinPopup(Vector3 position, float coinAmount)
+    {
+        GameObject popup = Instantiate(coinPopupPrefab, position, Quaternion.identity);
+        TextMeshPro textMeshPro = popup.GetComponent<TextMeshPro>();
+        textMeshPro.text = $"+{(float)Math.Round(coinAmount, 2)}"; // Set the pop-up text
+
+        StartCoroutine(PopUpAnimation(popup.transform));
+    }
+
+    private IEnumerator PopUpAnimation(Transform popupTransform)
+    {
+        Vector3 startPosition = popupTransform.position;
+        Vector3 targetPosition = startPosition + Vector3.up * maxHeight;
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            // Lerp to the target position
+            popupTransform.position = Vector3.Lerp(startPosition, targetPosition, (elapsedTime / duration));
+            // Make the text face the camera
+            popupTransform.LookAt(cameraTransform);
+            elapsedTime += Time.deltaTime;
+            yield return null; // Wait for the next frame
+        }
+
+        Destroy(popupTransform.gameObject);
     }
 }
