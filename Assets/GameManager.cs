@@ -6,18 +6,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public WeatherService weatherService;
+    public bool WeatherServiceEnabled = false;
+    public bool isRaining;
+    public bool isNight;
     public enum Difficulty { Easy, Medium, Hard }
     public TextMeshProUGUI moneytext;
     private DifficultySettings currentDifficultySettings;
     public List<GameObject> defenses;
     public List<GameObject> monsterPrefabs;
     private float currentMoney = 0;
+    
     void Start()
     {
+        if (WeatherServiceEnabled)
+        {
+            StartCoroutine(Init());
+        }
+        
         currentDifficultySettings = getSettings((Difficulty)PlayerPrefs.GetInt("difficulty", 1));
 
         GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
-
         foreach (GameObject obj in allGameObjects)
         {
             if (obj.layer == LayerMask.NameToLayer("Defenses"))
@@ -25,6 +34,14 @@ public class GameManager : MonoBehaviour
                 defenses.Add(obj);
             }
         }
+
+    }
+
+    IEnumerator Init()
+    {
+        yield return StartCoroutine(weatherService.Init());
+        isRaining = weatherService.IsRaining();
+        isNight = weatherService.IsNight();
     }
 
     void Update()
