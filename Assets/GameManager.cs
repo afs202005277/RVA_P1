@@ -88,7 +88,7 @@ public class GameManager : MonoBehaviour
         {
             { "Zombie", new MonsterSettings(1.0f, 1.0f, 1.0f, 50f) },
             { "Lizard", new MonsterSettings(1.0f, 1.0f, 1.0f, 45f) },
-            { "Ogre", new MonsterSettings(1.0f, 1.0f, 1.0f, 70f) },
+            { "Ogre", new MonsterSettings(1.0f,1.0f, 1.0f, 70f) },
             { "Scavenger", new MonsterSettings(1.0f, 1.0f, 1.0f, 40f) },
             { "Chomper", new MonsterSettings(1.0f, 1.0f, 1.0f, 55f) },
             { "Spitter", new MonsterSettings(1.0f, 1.0f, 1.0f, 30f) }

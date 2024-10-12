@@ -8,6 +8,8 @@ public class ArrowController : MonoBehaviour
     private Vector3 headPosition;
     private Rigidbody rb;
     private bool isStuck = false;
+    private MonsterController targetScript;
+    private Vector3 center;
 
     void Start()
     {
@@ -26,8 +28,9 @@ public class ArrowController : MonoBehaviour
     public void setTarget(GameObject target)
     {
         this.target = target;
+        this.targetScript = target.GetComponent<MonsterController>();
         Collider monsterCollider = target.GetComponent<Collider>();
-
+        center = monsterCollider.bounds.center;
         if (monsterCollider != null)
         {
             float targetHeadOffset = monsterCollider.bounds.size.y;
@@ -46,6 +49,9 @@ public class ArrowController : MonoBehaviour
     {
         // Calculate the initial velocity needed to hit the target
         Vector3 velocity = CalculateLaunchVelocity();
+        Vector3 copy = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        drawSphere(copy, Color.green);
+        drawLine(transform.position, velocity.normalized, Color.red);
         if (velocity != Vector3.zero)
         {
             // Apply the calculated velocity to the arrow's Rigidbody
@@ -59,22 +65,45 @@ public class ArrowController : MonoBehaviour
 
     Vector3 CalculateLaunchVelocity()
     {
-        Vector3 finalCoords = headPosition;
+        //Vector3 velocity = headPosition / (float)(Math.Sqrt(-2 * (transform.position.y - target.transform.position.y) / Physics.gravity.y)) - target.transform.forward * targetScript.speed;
+        // Gravity acceleration
+        float g = Physics.gravity.y;
 
-        Vector3 requiredMovement = headPosition - transform.position;
+        Vector3 archerPosition = transform.position;
+        Vector3 monsterHeadPosition = center;
+        //monsterPos.y = 0;
+        //Vector3 monsterHeadPosition = monsterPos + Vector3.up * headPosition.y;
 
-        requiredMovement.y = 0;
+        float heightDifference = monsterHeadPosition.y - archerPosition.y;
 
-        Vector3 startSpeed = requiredMovement / (float)(Math.Sqrt(-2 * transform.position.y / Physics.gravity.y));
+        // Time to hit the monster's head based on vertical motion
+        // t = sqrt(2 * heightDifference / g)
+        float time = Mathf.Sqrt(2 * heightDifference / g);
 
-        return startSpeed;
+        float vy = heightDifference / time;
 
+        Vector3 horizontalDisplacement = new Vector3(monsterHeadPosition.x - archerPosition.x, 0, monsterHeadPosition.z - archerPosition.z);
+
+        Vector3 horizontalVelocity = horizontalDisplacement / time;
+
+        Vector3 velocity = horizontalVelocity + new Vector3(0, vy, 0);
+
+        float horizontalDistance = horizontalDisplacement.magnitude;
+
+        time = horizontalDistance / horizontalVelocity.magnitude;
+
+        // Compute the required vertical velocity (Vy)
+        // Vy = (y_displacement + 0.5 * g * t^2) / t
+        vy = (heightDifference - 0.5f * g * Mathf.Pow(time, 2)) / time;
+
+        velocity = horizontalVelocity + new Vector3(0, vy, 0);
+
+        return velocity;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Im stuck!");
-        Debug.Log(collision.gameObject.name);
+        Debug.Log("Stuck in: " + collision.gameObject.name);
         Stick();
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Monsters")
         {
@@ -84,7 +113,6 @@ public class ArrowController : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Terrain"))
         {
-            Debug.Log("destroying in 5 seconds");
             Destroy(gameObject, 5);
         }
     }
@@ -104,5 +132,35 @@ public class ArrowController : MonoBehaviour
 
         transform.SetParent(monster.transform);
         Debug.Log("Set parent!");
+    }
+
+    void drawSphere(Vector3 position, Color color)
+    {
+        GameObject sphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        sphere.name += color.ToString();
+        sphere.transform.position = position;
+        sphere.transform.localScale = new Vector3(1, 1, 1);
+        Renderer sphereRenderer = sphere.GetComponent<Renderer>();
+        sphereRenderer.material.color = color;
+    }
+
+    void drawLine(Vector3 direction, Vector3 start, Color color)
+    {
+        GameObject lineObject = new GameObject("InfiniteLine");
+
+        LineRenderer lineRenderer = lineObject.AddComponent<LineRenderer>();
+
+        lineRenderer.material = new Material(Shader.Find("Sprites/Default")); // Basic material for lines
+        lineRenderer.startColor = color;
+        lineRenderer.endColor = color;
+
+        lineRenderer.startWidth = 0.1f;
+        lineRenderer.endWidth = 0.1f;
+
+        // Set the position count (2 points for a simple line)
+        lineRenderer.positionCount = 2;
+
+        lineRenderer.SetPosition(0, start);
+        lineRenderer.SetPosition(1, start + direction.normalized*100);
     }
 }

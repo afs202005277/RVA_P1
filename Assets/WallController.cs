@@ -70,7 +70,7 @@ public class WallController : DefensiveStructure
                     archer.rotation = Quaternion.Slerp(archer.rotation, targetRotation, Time.deltaTime * archerRotationSpeed);
                 }
 
-                Vector3 arrowPosition = highestPoint;
+                Vector3 arrowPosition = archer.transform.position;
                 arrowPosition.y = (float)(archer.position.y + (highestPoint.y - archer.position.y) * 0.75);
                 GameObject arrow = Instantiate(arrowPrefab, arrowPosition, archer.rotation);
 
@@ -108,14 +108,6 @@ public class WallController : DefensiveStructure
         // Calculate the speed multipliers for each animation
         float animation1Speed = animation1Clip.length / animation1Duration;
         float animation2Speed = animation2Clip.length / animation2Duration;
-
-        Debug.Log("Original Length:");
-        Debug.Log(animation1Length);
-        Debug.Log(animation2Length);
-
-        Debug.Log("Multiplier:");
-        Debug.Log(animation1Speed);
-        Debug.Log(animation2Speed);
 
         // Set the speeds dynamically in the animator
         animator.SetFloat("drawArrowMultiplier", animation1Speed);
