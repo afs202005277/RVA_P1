@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     private float currentMoney = 0;
     private int frameCounter = 0;
     private const int updateInterval = 4;
+    private bool overrideUpdate = false;
 
     void Start()
     {
@@ -50,10 +51,11 @@ public class GameManager : MonoBehaviour
     {
         frameCounter++;
         currentMoney += currentDifficultySettings.PassiveMoneyEarned * Time.deltaTime;
-        if (frameCounter >= updateInterval)
+        if (frameCounter >= updateInterval | overrideUpdate)
         {
             moneytext.text = ((float)Math.Round(currentMoney, 0)).ToString();
             frameCounter = 0;
+            overrideUpdate = false;
         }
     }
 
@@ -114,5 +116,11 @@ public class GameManager : MonoBehaviour
     public DifficultySettings CurrentDifficultySettings
     {
         get { return currentDifficultySettings; }
+    }
+
+    public void addMoney(float coins)
+    {
+        this.currentMoney += coins;
+        overrideUpdate = true;
     }
 }

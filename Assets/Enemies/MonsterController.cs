@@ -95,6 +95,7 @@ public class MonsterController : MonoBehaviour
         {
             animator.SetBool("died", true);
             ShowCoinPopup(gameObject.transform.position, this.coins);
+            gameManager.addMoney(this.coins);
         }
     }
 
@@ -108,6 +109,12 @@ public class MonsterController : MonoBehaviour
         GameObject popup = Instantiate(coinPopupPrefab, position, Quaternion.identity);
         TextMeshPro textMeshPro = popup.GetComponent<TextMeshPro>();
         textMeshPro.text = $"+{(float)Math.Round(coinAmount, 2)}"; // Set the pop-up text
+
+        Vector3 direction = cameraTransform.position - popup.transform.position;
+
+        Quaternion lookRotation = Quaternion.LookRotation(direction);
+
+        popup.transform.rotation = lookRotation;
 
         StartCoroutine(PopUpAnimation(popup.transform));
     }
