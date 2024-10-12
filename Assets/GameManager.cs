@@ -16,7 +16,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> defenses;
     public List<GameObject> monsterPrefabs;
     private float currentMoney = 0;
-    
+    private int frameCounter = 0;
+    private const int updateInterval = 4;
+
     void Start()
     {
         if (WeatherServiceEnabled)
@@ -46,8 +48,13 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        frameCounter++;
         currentMoney += currentDifficultySettings.PassiveMoneyEarned * Time.deltaTime;
-        moneytext.text = ((float)Math.Round(currentMoney, 2)).ToString();
+        if (frameCounter >= updateInterval)
+        {
+            moneytext.text = ((float)Math.Round(currentMoney, 0)).ToString();
+            frameCounter = 0;
+        }
     }
 
     public void RemoveDefense(GameObject defense)

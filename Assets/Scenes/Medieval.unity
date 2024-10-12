@@ -2011,6 +2011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8265c95982f53da4a9e9fd93e3abf898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weatherService: {fileID: 0}
+  WeatherServiceEnabled: 0
+  isRaining: 0
+  isNight: 0
   moneytext: {fileID: 1543301084}
   defenses: []
   monsterPrefabs:
