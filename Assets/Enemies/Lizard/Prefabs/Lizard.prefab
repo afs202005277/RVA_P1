@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2fcb218bae311564bb0644962a1b1d0d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fcb218bae311564bb0644962a1b1d0d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fcb218bae311564bb0644962a1b1d0d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2fcb218bae311564bb0644962a1b1d0d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 14830531b59d3b443885c8aaacb7e16e, type: 2}
     - target: {fileID: 919132149155446097, guid: 2fcb218bae311564bb0644962a1b1d0d, type: 3}
       propertyPath: m_Name
-      value: Lizard_A
+      value: Lizard
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -130,8 +130,12 @@ MonoBehaviour:
   animator: {fileID: 8268811963590475468}
   gameManager: {fileID: 0}
   health: 7
-  speed: 3
+  speed: 4
   damage: 5
+  coinPopupPrefab: {fileID: 0}
+  cameraTransform: {fileID: 0}
+  maxHeight: 1.5
+  duration: 1
 --- !u!136 &6441744744093818759
 CapsuleCollider:
   m_ObjectHideFlags: 0

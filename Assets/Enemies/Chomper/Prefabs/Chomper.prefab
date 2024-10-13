@@ -96,6 +96,10 @@ MonoBehaviour:
   health: 5
   speed: 4
   damage: 5
+  coinPopupPrefab: {fileID: 0}
+  cameraTransform: {fileID: 0}
+  maxHeight: 1.5
+  duration: 1
 --- !u!136 &9082497341066301697
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -115,10 +119,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.60938126
-  m_Height: 1.2187626
+  m_Radius: 0.68087685
+  m_Height: 1.3617537
   m_Direction: 1
-  m_Center: {x: 0, y: 0.48992696, z: 0.10938126}
+  m_Center: {x: 0, y: 0.63, z: 0.037885666}
 --- !u!54 &6556711511433166867
 Rigidbody:
   m_ObjectHideFlags: 0
