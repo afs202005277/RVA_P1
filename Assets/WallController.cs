@@ -13,6 +13,9 @@ public class WallController : DefensiveStructure
     private float archerRotationSpeed = 30f;
     public GameObject arrowPrefab;
 
+    private bool _canAttack = true;
+    private float _stunTimer = 0f;
+
     void Start()
     {
         base.Initialize();
@@ -50,9 +53,39 @@ public class WallController : DefensiveStructure
         }
     }
 
+    public override void Stun(float seconds)
+    {
+        if (_canAttack)
+        {
+            StartCoroutine(StunCoroutine(seconds));
+        }
+        else
+        {
+            _stunTimer = Mathf.Max(_stunTimer, seconds);
+        }
+    }
+
+
+    private IEnumerator StunCoroutine(float seconds)
+    {
+        _canAttack = false;
+        _stunTimer = seconds;
+
+        while (_stunTimer > 0f)
+        {
+            _stunTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        _canAttack = true;
+        _stunTimer = 0f;
+    }
     protected override void Attack()
     {
-        Debug.Log("Wall attack!");
+        if (!_canAttack)
+        {
+            return;
+        }
         foreach (Animator animator in archerAnimators)
         {
             animator.SetTrigger(currentTarget != null ? "TargetAcquired" : "TargetLost");

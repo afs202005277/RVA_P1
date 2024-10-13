@@ -14,6 +14,11 @@ public class BaseController : DefensiveStructure
         }
     }
 
+    public override void Stun(float seconds)
+    {
+        return; // No Effect on Base
+    }
+
     protected override void DestroyObject()
     {
         Debug.Log("GAME FINISHED");

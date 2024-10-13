@@ -46,6 +46,8 @@ public abstract class DefensiveStructure : MonoBehaviour
     }
 
     public abstract void TakeDamage(float damage);
+
+    public abstract void Stun(float seconds);
     protected abstract void Attack();
 
     void Update()

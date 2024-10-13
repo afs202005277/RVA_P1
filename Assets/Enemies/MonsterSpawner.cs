@@ -15,6 +15,10 @@ public class MonsterSpawner : MonoBehaviour
     private int enemyCount = 0;
     private int layerMask;
 
+    private int _nightMonster = 3;
+    private int _hotMonster = 4;
+    private int _rainMonster = 5;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,14 +43,51 @@ public class MonsterSpawner : MonoBehaviour
         Vector2 randomPoint = Random.insideUnitCircle.normalized * spawnRadius;
         Vector3 spawnPosition = new Vector3(randomPoint.x, 0, randomPoint.y) + castleCenter.position;
         Debug.Log(gameManager.isNight);
-        // get random monster prefab
-        GameObject monsterPrefab = gameManager.monsterPrefabs[Random.Range(0, gameManager.monsterPrefabs.Count)];
+
+        int monsterIndex = -1;
+
+        if (gameManager.isNight && gameManager.isRaining)
+        {
+            bool chooseNightMonster = Random.Range(0, 2) == 0;
+
+            if (chooseNightMonster)
+                monsterIndex = _nightMonster;
+            else
+                monsterIndex = _rainMonster;
+
+        }
+        else if (gameManager.isNight)
+        {
+            bool chooseNightMonster = Random.Range(0, 2) == 0;
+
+            if (chooseNightMonster)
+                monsterIndex = _nightMonster;
+            else
+                monsterIndex = Random.Range(0, gameManager.monsterPrefabs.Count);
+
+        }
+        else if (gameManager.isRaining)
+        {
+            bool chooseRainingMonster = Random.Range(0, 2) == 0;
+
+            if (chooseRainingMonster)
+                monsterIndex = _rainMonster;
+            else
+                monsterIndex = Random.Range(0, gameManager.monsterPrefabs.Count);
+        }
+        else
+        {
+            monsterIndex = Random.Range(0, gameManager.monsterPrefabs.Count);
+        }
+
+        GameObject monsterPrefab = gameManager.monsterPrefabs[monsterIndex];
 
         GameObject monster = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
 
         if (layerMask != -1) // Ensure the layer exists
         {
-            monster.layer = layerMask;
+            if (monsterIndex != _nightMonster)
+                monster.layer = layerMask;
         }
         MonsterController script = monster.GetComponent<MonsterController>();
         script.gameManager = gameManager;

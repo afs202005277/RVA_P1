@@ -75,7 +75,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 3a3cea986292c2445a02c973a48c7e8b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 678e12c638f5a794db0b577812bb2cc9, type: 2}
+      objectReference: {fileID: 9100000, guid: 63e83949604cc5c4f8b7992b5e3249ba, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -112,6 +112,7 @@ MonoBehaviour:
   health: 5
   speed: 4
   damage: 5
+  stunTime: 2
   coinPopupPrefab: {fileID: 0}
   cameraTransform: {fileID: 0}
   maxHeight: 1.5

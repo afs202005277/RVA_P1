@@ -11,6 +11,7 @@ public class MonsterController : MonoBehaviour
     public float health;
     public float speed;
     public float damage;
+    public float stunTime = 1f;
     private GameObject currentDefense = null;
 
     public GameObject coinPopupPrefab;
@@ -85,6 +86,21 @@ public class MonsterController : MonoBehaviour
             return;
         }
         currentDefense.GetComponent<DefensiveStructure>().TakeDamage(damage);
+    }
+
+    public void ScavengerDealDamage()
+    {
+        if (gameObject.layer != LayerMask.NameToLayer("Monsters"))
+        {
+            gameObject.layer = LayerMask.NameToLayer("Monsters");
+        }
+        DealDamage();
+    }
+
+    public void SpitterDealDamage()
+    {
+        DealDamage();
+        currentDefense.GetComponent<DefensiveStructure>().Stun(stunTime);
     }
 
     public void TakeDamage(float damage)

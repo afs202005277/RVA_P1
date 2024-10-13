@@ -1993,6 +1993,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278329160}
   - component: {fileID: 1278329159}
+  - component: {fileID: 1278329161}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2012,8 +2013,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8265c95982f53da4a9e9fd93e3abf898, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weatherService: {fileID: 0}
-  WeatherServiceEnabled: 0
+  weatherService: {fileID: 1278329161}
+  WeatherServiceEnabled: 1
   isRaining: 0
   isNight: 0
   moneytext: {fileID: 1543301084}
@@ -2040,6 +2041,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1278329161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278329158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2ab97f27646f24eb9a653eb7d4178f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  requestTimeoutSeconds: 1
 --- !u!1 &1347234834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2305,7 +2319,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: health
-      value: 20
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: attackRange
@@ -2317,11 +2331,11 @@ PrefabInstance:
       objectReference: {fileID: 1278329159}
     - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: attackDamage
-      value: 10
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: attackCooldown
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: cannonballPrefab
@@ -2331,6 +2345,10 @@ PrefabInstance:
       propertyPath: projectilePrefab
       value: 
       objectReference: {fileID: 8300271018335448625, guid: d331a1d9e8fe310469104caf93c99152, type: 3}
+    - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
