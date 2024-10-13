@@ -118,6 +118,7 @@ public class WeatherService : MonoBehaviour
     }
 
     public int requestTimeoutSeconds = 1;
+    public double HotTemperatureThreshold = 30.0;
 
     const string OpenWeatherAPIKey = "12e41b48270751f2ac2ea183c7051b0d";
     const string URL_GetPublicIpAddress = "https://api.ipify.org";
@@ -153,6 +154,11 @@ public class WeatherService : MonoBehaviour
         }
     }
 
+    public double GetCurrentTemperature()
+    {
+        return PlayerWeatherData.KeyInfo.Temperature;
+    }
+
     public bool IsRaining()
     {
         return GetWeatherCondition() == WeatherCondition.Rain;
@@ -163,9 +169,15 @@ public class WeatherService : MonoBehaviour
         return GetDayState() == DayState.Night;
     }
 
+    public bool IsHot()
+    {
+        return GetCurrentTemperature() > HotTemperatureThreshold;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     public IEnumerator Init()
@@ -178,6 +190,7 @@ public class WeatherService : MonoBehaviour
             yield return StartCoroutine(FetchPlayerIpAddress());
         }
     }
+
     // Update is called once per frame
     void Update()
     {

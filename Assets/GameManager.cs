@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public bool WeatherServiceEnabled = false;
     public bool isRaining;
     public bool isNight;
+    public bool isHot;
+
     public enum Difficulty { Easy, Medium, Hard }
     public TextMeshProUGUI moneytext;
     private DifficultySettings currentDifficultySettings;
@@ -45,6 +47,7 @@ public class GameManager : MonoBehaviour
         yield return StartCoroutine(weatherService.Init());
         isRaining = weatherService.IsRaining();
         isNight = weatherService.IsNight();
+        isHot = weatherService.IsHot();
     }
 
     void Update()
