@@ -92,7 +92,6 @@ public class MonsterSpawner : MonoBehaviour
         script.gameManager = gameManager;
         script.applyDifficultySettings(gameManager.CurrentDifficultySettings.MonsterSettings[monsterPrefab.name]);
         script.coinPopupPrefab = coinPopupPrefab;
-        Debug.Log("Name: " + monsterPrefab.name);
 
         enemyCount++;
     }

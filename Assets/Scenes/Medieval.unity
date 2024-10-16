@@ -2017,6 +2017,7 @@ MonoBehaviour:
   WeatherServiceEnabled: 1
   isRaining: 0
   isNight: 0
+  isHot: 0
   moneytext: {fileID: 1543301084}
   defenses: []
   monsterPrefabs:
@@ -2054,6 +2055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requestTimeoutSeconds: 1
+  HotTemperatureThreshold: 30
 --- !u!1 &1347234834
 GameObject:
   m_ObjectHideFlags: 0
@@ -2141,7 +2143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 996913224193060229, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1776909934484408544, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_LocalScale.x

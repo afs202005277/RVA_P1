@@ -68,7 +68,6 @@ public class TowerController : DefensiveStructure
 
     protected override void DestroyObject()
     {
-        Debug.Log("Tower Destroyed!");
         base.DestroyObject();
     }
 }

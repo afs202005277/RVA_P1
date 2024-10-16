@@ -108,7 +108,6 @@ public class ArrowController : MonoBehaviour
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Monsters")
         {
             // Logic when the arrow hits the monster
-            Debug.Log("Arrow hit the monster!");
             StickToMonster(target);
         }
         if (collision.gameObject.CompareTag("Terrain"))
@@ -131,7 +130,6 @@ public class ArrowController : MonoBehaviour
         GetComponent<Collider>().enabled = false;
 
         transform.SetParent(monster.transform);
-        Debug.Log("Set parent!");
     }
 
     void drawSphere(Vector3 position, Color color)
