@@ -107,7 +107,7 @@ public class MonsterController : MonoBehaviour
     {
         health -= damage;
 
-        if (health <= 0)
+        if (health <= 0 && !animator.GetBool("died"))
         {
             animator.SetBool("died", true);
             ShowCoinPopup(gameObject.transform.position, this.coins);

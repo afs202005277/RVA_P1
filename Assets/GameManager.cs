@@ -24,11 +24,11 @@ public class GameManager : MonoBehaviour
     private int currentRound = 1;
     public TextMeshProUGUI roundIndicator;
     public TextMeshProUGUI roundText;
-    public float blinkDuration = 10f;       // Total time for blinking
-    public int blinkCount = 5;             // How many times it should blink
+    public float blinkDuration;       // Total time for blinking
+    public int blinkCount;             // How many times it should blink
 
     private int monstersKilled = 0;
-    public int monsterPerRound = 3;
+    public int monsterPerRound;
 
     void Start()
     {
