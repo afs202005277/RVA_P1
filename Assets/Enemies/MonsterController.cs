@@ -117,6 +117,7 @@ public class MonsterController : MonoBehaviour
 
     public void KillEnemy()
     {
+        gameManager.killMonster();
         Destroy(gameObject);
     }
 

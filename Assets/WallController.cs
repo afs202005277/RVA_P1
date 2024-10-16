@@ -109,6 +109,7 @@ public class WallController : DefensiveStructure
 
                 ArrowController arrowScript = arrow.GetComponent<ArrowController>();
                 arrowScript.setTarget(currentTarget);
+                arrowScript.damage = attackDamage;
             }
             foreach (Animator animator in archerAnimators)
             {

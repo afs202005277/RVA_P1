@@ -21,6 +21,14 @@ public class GameManager : MonoBehaviour
     private int frameCounter = 0;
     private const int updateInterval = 4;
     private bool overrideUpdate = false;
+    private int currentRound = 1;
+    public TextMeshProUGUI roundIndicator;
+    public TextMeshProUGUI roundText;
+    public float blinkDuration = 10f;       // Total time for blinking
+    public int blinkCount = 5;             // How many times it should blink
+
+    private int monstersKilled = 0;
+    public int monsterPerRound = 3;
 
     void Start()
     {
@@ -39,7 +47,67 @@ public class GameManager : MonoBehaviour
                 defenses.Add(obj);
             }
         }
+    }
+    
+    public int getNumMonstersRound()
+    {
+        return monsterPerRound; // TODO: the number of max monsters created in each round should depend on the round number
+    }
 
+    public void killMonster()
+    {
+        monstersKilled++;
+        if ( monstersKilled == monsterPerRound)
+        {
+            roundEnded();
+        }
+
+    }
+
+    public void roundEnded()
+    {
+        Debug.Log("Round ended");
+        StartCoroutine(BlinkRoundIndicator(blinkDuration, blinkCount));
+    }
+
+    IEnumerator BlinkRoundIndicator(float duration, int count)
+    {
+        float fadeTime = duration / (count * 2); // Time for each fade in/out
+        Color originalColor = roundIndicator.color;
+        Color transparentColor = originalColor;
+        transparentColor.a = 0;  // Set alpha to 0 for fade out
+
+        for (int i = 0; i < count; i++)
+        {
+            // Fade out
+            yield return StartCoroutine(FadeTo(transparentColor, fadeTime));
+
+            // Fade in
+            yield return StartCoroutine(FadeTo(originalColor, fadeTime));
+        }
+        OnBlinkComplete();
+    }
+
+    void OnBlinkComplete()
+    {
+        currentRound++;
+        roundIndicator.text = currentRound.ToString();
+    }
+
+    IEnumerator FadeTo(Color targetColor, float duration)
+    {
+        Color startColor = roundIndicator.color;
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration)
+        {
+            roundIndicator.color = Color.Lerp(startColor, targetColor, elapsedTime / duration);
+            roundText.color = Color.Lerp(startColor, targetColor, elapsedTime / duration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        roundIndicator.color = targetColor;
     }
 
     IEnumerator Init()

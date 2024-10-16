@@ -621,7 +621,6 @@ MonoBehaviour:
   castleCenter: {fileID: 1003860722}
   spawnRadius: 30
   spawnRate: 3
-  maxEnemies: 10
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 249307880}
@@ -1993,7 +1992,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weatherService: {fileID: 1278329161}
-  WeatherServiceEnabled: 1
+  WeatherServiceEnabled: 0
   isRaining: 0
   isNight: 0
   isHot: 0
@@ -2006,6 +2005,11 @@ MonoBehaviour:
   - {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
   - {fileID: 3074657719725428346, guid: cbbcf6e267045b043ae0a5d0debc8280, type: 3}
   - {fileID: 528104615065489744, guid: e3b746fef223ad24f83c99406d6087ca, type: 3}
+  roundIndicator: {fileID: 973811330}
+  roundText: {fileID: 500730062}
+  blinkDuration: 10
+  blinkCount: 10
+  monsterPerRound: 1
 --- !u!4 &1278329160
 Transform:
   m_ObjectHideFlags: 0
@@ -2188,6 +2192,10 @@ PrefabInstance:
       propertyPath: arrowPrefab
       value: 
       objectReference: {fileID: 4186913572433640243, guid: df61a9277f2706d4e9bf7dbc0bf01234, type: 3}
+    - target: {fileID: 5625698464503146136, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
+      propertyPath: attackDamage
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 6572554566009052801, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_Enabled
       value: 1

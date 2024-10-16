@@ -10,6 +10,7 @@ public class ArrowController : MonoBehaviour
     private bool isStuck = false;
     private MonsterController targetScript;
     private Vector3 center;
+    public float damage;
 
     void Start()
     {
@@ -129,7 +130,11 @@ public class ArrowController : MonoBehaviour
 
         GetComponent<Collider>().enabled = false;
 
-        transform.SetParent(monster.transform);
+        if (monster != null)
+        {
+            transform.SetParent(monster.transform);
+            monster.GetComponent<MonsterController>().TakeDamage(damage);
+        }
     }
 
     void drawSphere(Vector3 position, Color color)

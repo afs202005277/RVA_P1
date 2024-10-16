@@ -7,7 +7,7 @@ public class MonsterSpawner : MonoBehaviour
     public Transform castleCenter;       // The center point (castle)
     public float spawnRadius = 20f;      // The radius of the perimeter circle
     public float spawnRate = 3f;         // How often zombies will spawn (in seconds)
-    public int maxEnemies = 10;       // The maximum number of enemies that can be spawned
+    private int maxEnemies;       // The maximum number of enemies that can be spawned
     public GameManager gameManager;
     public GameObject coinPopupPrefab;
     public Terrain terrain;
@@ -23,6 +23,7 @@ public class MonsterSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxEnemies = gameManager.getNumMonstersRound();
         nextSpawnTime = Time.time + spawnRate;
         layerMask = LayerMask.NameToLayer("Monsters");
     }
@@ -30,6 +31,7 @@ public class MonsterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Check if it's time to spawn a new zombie
         if (Time.time >= nextSpawnTime && enemyCount < maxEnemies)
         {
