@@ -10,6 +10,7 @@ public class MonsterSpawner : MonoBehaviour
     public int maxEnemies = 10;       // The maximum number of enemies that can be spawned
     public GameManager gameManager;
     public GameObject coinPopupPrefab;
+    public Terrain terrain;
 
     private float nextSpawnTime;
     private int enemyCount = 0;
@@ -41,7 +42,7 @@ public class MonsterSpawner : MonoBehaviour
     {
         // Generate a random point on the perimeter of the circle
         Vector2 randomPoint = Random.insideUnitCircle.normalized * spawnRadius;
-        Vector3 spawnPosition = new Vector3(randomPoint.x, 0, randomPoint.y) + castleCenter.position;
+        Vector3 spawnPosition = new Vector3(randomPoint.x, terrain.SampleHeight(new Vector3(randomPoint.x, 0f, randomPoint.y)), randomPoint.y) + castleCenter.position;
 
         int monsterIndex = -1;
 

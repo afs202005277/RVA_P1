@@ -368,7 +368,6 @@ GameObject:
   - component: {fileID: 249307881}
   - component: {fileID: 249307880}
   - component: {fileID: 249307879}
-  - component: {fileID: 249307878}
   m_Layer: 9
   m_Name: Terrain
   m_TagString: Terrain
@@ -376,27 +375,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &249307878
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249307877}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 999.2804, y: 1, z: 1004.02625}
-  m_Center: {x: 499.6402, y: -0.5, z: 502.01312}
 --- !u!154 &249307879
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -468,7 +446,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -500, y: 0, z: -500}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -641,11 +619,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   castleCenter: {fileID: 1003860722}
-  spawnRadius: 50
+  spawnRadius: 30
   spawnRate: 3
   maxEnemies: 10
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
+  terrain: {fileID: 249307880}
 --- !u!4 &457533698
 Transform:
   m_ObjectHideFlags: 0
@@ -2159,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776909934484408544, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 1776909934484408544, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2167,7 +2146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1776909934484408544, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.1
+      value: -16.5
       objectReference: {fileID: 0}
     - target: {fileID: 1776909934484408544, guid: cc657eb7abb26df4589e9e36264bebe5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2317,7 +2296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4052832885727366044, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
       propertyPath: health

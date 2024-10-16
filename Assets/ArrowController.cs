@@ -50,8 +50,8 @@ public class ArrowController : MonoBehaviour
         // Calculate the initial velocity needed to hit the target
         Vector3 velocity = CalculateLaunchVelocity();
         Vector3 copy = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        drawSphere(copy, Color.green);
-        drawLine(transform.position, velocity.normalized, Color.red);
+        //drawSphere(copy, Color.green);
+        //drawLine(transform.position, velocity.normalized, Color.red);
         if (velocity != Vector3.zero)
         {
             // Apply the calculated velocity to the arrow's Rigidbody
