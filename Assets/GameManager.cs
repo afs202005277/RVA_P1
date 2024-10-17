@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     public int getNumMonstersRound()
     {
-        return monsterPerRound; // TODO: the number of max monsters created in each round should depend on the round number
+        return monsterPerRound + (currentRound-1); // TODO: the number of max monsters created in each round should depend on the round number
     }
 
     public void killMonster()

@@ -31,7 +31,13 @@ public class MonsterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        int tmp = gameManager.getNumMonstersRound();
+        if (maxEnemies < tmp)
+        {
+            // new round
+            maxEnemies = tmp;
+            enemyCount = 0;
+        }
         // Check if it's time to spawn a new zombie
         if (Time.time >= nextSpawnTime && enemyCount < maxEnemies)
         {

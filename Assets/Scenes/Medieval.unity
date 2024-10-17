@@ -10364,7 +10364,7 @@ MonoBehaviour:
   - {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
   - {fileID: 3074657719725428346, guid: cbbcf6e267045b043ae0a5d0debc8280, type: 3}
   - {fileID: 528104615065489744, guid: e3b746fef223ad24f83c99406d6087ca, type: 3}
-  monsterPerRound: 3
+  monsterPerRound: 1
   difficultyConfig: {}
 --- !u!4 &1278329160
 Transform:
