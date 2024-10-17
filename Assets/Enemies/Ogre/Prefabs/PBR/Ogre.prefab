@@ -1737,9 +1737,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 5674075356664803920}
   gameManager: {fileID: 0}
-  health: 100
+  health: 1000
   speed: 1
   damage: 10
+  stunTime: 1
+  coinPopupPrefab: {fileID: 0}
+  cameraTransform: {fileID: 0}
+  maxHeight: 1.5
+  duration: 1
 --- !u!136 &2749959380670448585
 CapsuleCollider:
   m_ObjectHideFlags: 0

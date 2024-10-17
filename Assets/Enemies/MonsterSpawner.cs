@@ -17,7 +17,7 @@ public class MonsterSpawner : MonoBehaviour
     private int layerMask;
 
     private int _nightMonster = 3;
-    private int _hotMonster = 4;
+    private int _fireMonster = 4;
     private int _rainMonster = 5;
 
     // Start is called before the first frame update
@@ -80,6 +80,15 @@ public class MonsterSpawner : MonoBehaviour
 
             if (chooseRainingMonster)
                 monsterIndex = _rainMonster;
+            else
+                monsterIndex = Random.Range(0, gameManager.monsterPrefabs.Count);
+        }
+        else if (gameManager.isHot)
+        {
+            bool chooseFireMonster = Random.Range(0, 2) == 0;
+
+            if (chooseFireMonster)
+                monsterIndex = _fireMonster;
             else
                 monsterIndex = Random.Range(0, gameManager.monsterPrefabs.Count);
         }

@@ -6,6 +6,14 @@ public abstract class DefensiveStructure : MonoBehaviour
 {
     public GameManager gameManager;
 
+    [Header("Burning")]
+    public GameObject burningPrefab;
+
+    [Header("Explosion")]
+    public GameObject explosionPrefab;
+    public GameObject buildingPrefab;
+    public GameObject leftOversPrefab;
+
     [Header("Defensive Stats")]
     public float health;
 
@@ -22,6 +30,9 @@ public abstract class DefensiveStructure : MonoBehaviour
     [Header("Projectile")]
     public GameObject projectilePrefab;
     protected Vector3 highestPoint;
+
+    protected bool _burning = false;
+    protected bool _burnCool = false;
 
     void Start()
     {
@@ -48,6 +59,8 @@ public abstract class DefensiveStructure : MonoBehaviour
     public abstract void TakeDamage(float damage);
 
     public abstract void Stun(float seconds);
+
+    public abstract void Burn(float seconds);
     protected abstract void Attack();
 
     void Update()
@@ -58,6 +71,7 @@ public abstract class DefensiveStructure : MonoBehaviour
     protected void DetectAndAttack()
     {
         DetectMonsters();
+        BurnDamage();
         if (currentTarget != null && Time.time >= nextAttackTime)
         {
             Attack();
@@ -65,7 +79,25 @@ public abstract class DefensiveStructure : MonoBehaviour
         }
     }
 
-    protected void DetectMonsters()
+    protected void BurnDamage()
+    {
+        if (!burningPrefab)
+            return;
+        if (_burning && !_burnCool)
+        {
+            TakeDamage(2);
+            StartCoroutine(WaitBeforeCheck(0.5f));
+        }
+    }
+
+    protected IEnumerator WaitBeforeCheck(float seconds)
+    {
+        _burnCool = true;
+        yield return new WaitForSeconds(seconds);
+        _burnCool = false;
+    }
+
+        protected void DetectMonsters()
     {
         Collider[] monstersInRange = Physics.OverlapSphere(transform.position, attackRange, monstersLayer);
         if (monstersInRange.Length > 0)
@@ -81,8 +113,15 @@ public abstract class DefensiveStructure : MonoBehaviour
     protected virtual void DestroyObject()
     {
         gameManager.RemoveDefense(gameObject);
-        Debug.Log("Defensive object destroyed!");
-        Destroy(gameObject);
+        gameObject.layer = LayerMask.NameToLayer("Default");
+        explosionPrefab.SetActive(true);
+        buildingPrefab.SetActive(false);
+        leftOversPrefab.SetActive(true);
+        Collider[] colliders = gameObject.GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
     }
 
     void OnDrawGizmosSelected()

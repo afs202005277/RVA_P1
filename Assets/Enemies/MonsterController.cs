@@ -12,6 +12,7 @@ public class MonsterController : MonoBehaviour
     public float speed;
     public float damage;
     public float stunTime = 1f;
+    public float burnTime = 2f;
     private GameObject currentDefense = null;
 
     public GameObject coinPopupPrefab;
@@ -44,7 +45,10 @@ public class MonsterController : MonoBehaviour
             }
         }
 
-        Vector3 direction = (closestDef.transform.position - transform.position).normalized;
+        Vector3 direction = (closestDef.transform.position - transform.position);
+        direction.y = 0;
+        direction.Normalize();
+
 
         Vector3 increment = speed * Time.deltaTime * direction;
 
@@ -54,7 +58,17 @@ public class MonsterController : MonoBehaviour
             Quaternion lookRotation = Quaternion.LookRotation(direction);
             transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
         }
-        
+
+        if (!currentDefense || currentDefense.layer == LayerMask.NameToLayer("Default"))
+        {
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isAttacking", false);
+            if (currentDefense && currentDefense.GetComponent<DefensiveStructure>().burningPrefab)
+                currentDefense.GetComponent<DefensiveStructure>().burningPrefab.SetActive(false);
+            currentDefense = null;
+            return;
+        }
+
     }
 
     public void applyDifficultySettings(MonsterSettings settings)
@@ -76,15 +90,9 @@ public class MonsterController : MonoBehaviour
 
     }
 
-
+    
     public void DealDamage()
     {
-        if (!currentDefense) {
-            animator.SetBool("isWalking", true);
-            animator.SetBool("isAttacking", false);
-            currentDefense = null;
-            return;
-        }
         currentDefense.GetComponent<DefensiveStructure>().TakeDamage(damage);
     }
 
@@ -101,6 +109,12 @@ public class MonsterController : MonoBehaviour
     {
         DealDamage();
         currentDefense.GetComponent<DefensiveStructure>().Stun(stunTime);
+    }
+
+    public void ChomperDealDamage()
+    {
+        DealDamage();
+        currentDefense.GetComponent<DefensiveStructure>().Burn(burnTime);
     }
 
     public void TakeDamage(float damage)

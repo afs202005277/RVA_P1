@@ -14,6 +14,7 @@ public class WallController : DefensiveStructure
 
     private bool _canAttack = true;
     private float _stunTimer = 0f;
+    private float _burnTimer = 0f;
 
     void Start()
     {
@@ -80,6 +81,41 @@ public class WallController : DefensiveStructure
         _stunTimer = 0f;
     }
 
+    public override void Burn(float seconds)
+    {
+        if (!_burning)
+        {
+            StartCoroutine(BurnCoroutine(seconds));
+        }
+        else
+        {
+            _burnTimer = Mathf.Max(_burnTimer, seconds);
+        }
+    }
+
+    private IEnumerator BurnCoroutine(float seconds)
+    {
+        _burning = true;
+        _burnTimer = seconds;
+
+
+        burningPrefab.SetActive(true);
+
+
+
+        while (_burnTimer > 0f)
+        {
+            _burnTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+
+
+        _burning = false;
+        burningPrefab.SetActive(false);
+        _burnTimer = 0f;
+    }
+
     void Update()
     {
         DetectAndAttack();
@@ -131,7 +167,7 @@ public class WallController : DefensiveStructure
 
     protected override void DestroyObject()
     {
-        Debug.Log("Tower Destroyed!");
+        _canAttack = false;
         base.DestroyObject();
     }
 

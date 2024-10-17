@@ -6,6 +6,7 @@ public class TowerController : DefensiveStructure
 {
     private bool _canAttack = true;
     private float _stunTimer = 0f;
+    private float _burnTimer = 0f;
     public override void TakeDamage(float damage)
     {
         health -= damage;
@@ -26,6 +27,41 @@ public class TowerController : DefensiveStructure
         {
             _stunTimer = Mathf.Max(_stunTimer, seconds);
         }
+    }
+
+    public override void Burn(float seconds)
+    {
+        if (!_burning)
+        {
+            StartCoroutine(BurnCoroutine(seconds));
+        }
+        else
+        {
+            _burnTimer = Mathf.Max(_burnTimer, seconds);
+        }
+    }
+
+    private IEnumerator BurnCoroutine(float seconds)
+    {
+        _burning = true;
+        _burnTimer = seconds;
+
+        
+        burningPrefab.SetActive(true);
+
+        
+
+        while (_burnTimer > 0f)
+        {
+            _burnTimer -= Time.deltaTime;
+            yield return null;
+        }
+
+        
+
+        _burning = false;
+        burningPrefab.SetActive(false);
+        _burnTimer = 0f;
     }
 
     private IEnumerator StunCoroutine(float seconds)
@@ -68,6 +104,7 @@ public class TowerController : DefensiveStructure
 
     protected override void DestroyObject()
     {
+        _canAttack = false;
         base.DestroyObject();
     }
 }
