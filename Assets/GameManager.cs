@@ -30,10 +30,6 @@ public class GameManager : MonoBehaviour
     private int monstersKilled = 0;
     public int monsterPerRound;
 
-    public GameObject[] castles;
-    public TextMeshProUGUI upgradePriceUI;
-    public int upgradePriceStep;
-
     public CanvasGroup NEMoney;
 
     void Start()
@@ -52,50 +48,6 @@ public class GameManager : MonoBehaviour
             {
                 defenses.Add(obj);
             }
-        }
-    }
-
-    public void upgradeBase()
-    {
-        int upgradePrice = int.Parse(upgradePriceUI.text);
-
-        if (currentMoney >= upgradePrice)
-        {
-            GameObject currentCastle = null;
-            GameObject nextCastle = null;
-            for (int i = 0; i < castles.Length; i++)
-            {
-                if (castles[i].activeSelf)
-                {
-                    Debug.Log(castles[i].name);
-                    currentCastle = castles[i];
-
-                    if (i + 1 < castles.Length)
-                    {
-                        nextCastle = castles[i + 1];
-                        Debug.Log("next castle: " + nextCastle.name);
-                        break;
-                    }
-                }
-            }
-
-            if (currentCastle != null && nextCastle != null)
-            {
-                currentMoney -= upgradePrice;
-                overrideUpdate = true;
-                nextCastle.SetActive(true);
-                currentCastle.SetActive(false);
-                upgradePriceUI.text = (upgradePrice + upgradePriceStep).ToString();
-            }
-            else
-            {
-                Debug.LogWarning("No castle to upgrade to, or all castles are upgraded.");
-            }
-        }
-        else
-        {
-            Debug.Log("Not enough money!");
-            notEnoughMoney();
         }
     }
 
@@ -244,7 +196,7 @@ public class GameManager : MonoBehaviour
         get { return currentDifficultySettings; }
     }
 
-    public void addMoney(float coins)
+    public void updateMoney(float coins)
     {
         this.currentMoney += coins;
         overrideUpdate = true;
@@ -273,5 +225,10 @@ public class GameManager : MonoBehaviour
         }
 
         canvasGroup.alpha = endAlpha;
+    }
+
+    public float getCurrentMoney()
+    {
+        return currentMoney;
     }
 }

@@ -10329,6 +10329,7 @@ GameObject:
   - component: {fileID: 1278329160}
   - component: {fileID: 1278329159}
   - component: {fileID: 1278329161}
+  - component: {fileID: 1278329162}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10367,14 +10368,6 @@ MonoBehaviour:
   blinkDuration: 10
   blinkCount: 10
   monsterPerRound: 3
-  castles:
-  - {fileID: 2139155091}
-  - {fileID: 258545024}
-  - {fileID: 1207552228}
-  - {fileID: 2108033276}
-  - {fileID: 1227814046}
-  upgradePriceUI: {fileID: 672133674}
-  upgradePriceStep: 100
   NEMoney: {fileID: 76829111}
 --- !u!4 &1278329160
 Transform:
@@ -10405,6 +10398,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requestTimeoutSeconds: 1
   HotTemperatureThreshold: 30
+--- !u!114 &1278329162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278329158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbdaa286b49c6384a8857d63c299b52f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1278329159}
+  castles:
+  - {fileID: 2139155091}
+  - {fileID: 258545024}
+  - {fileID: 1207552228}
+  - {fileID: 2108033276}
+  - {fileID: 1227814046}
+  upgradePriceUI: {fileID: 672133674}
+  upgradePriceStep: 100
 --- !u!1 &1347234834
 GameObject:
   m_ObjectHideFlags: 0
@@ -11260,8 +11274,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1278329159}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+      - m_Target: {fileID: 1278329162}
+        m_TargetAssemblyTypeName: BaseUpgrader, Assembly-CSharp
         m_MethodName: upgradeBase
         m_Mode: 1
         m_Arguments:

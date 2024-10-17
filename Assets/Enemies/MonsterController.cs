@@ -111,7 +111,7 @@ public class MonsterController : MonoBehaviour
         {
             animator.SetBool("died", true);
             ShowCoinPopup(gameObject.transform.position, this.coins);
-            gameManager.addMoney(this.coins);
+            gameManager.updateMoney(this.coins);
         }
     }
 
