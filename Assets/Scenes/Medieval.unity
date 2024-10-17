@@ -10330,6 +10330,7 @@ GameObject:
   - component: {fileID: 1278329159}
   - component: {fileID: 1278329161}
   - component: {fileID: 1278329162}
+  - component: {fileID: 1278329163}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10354,7 +10355,7 @@ MonoBehaviour:
   isRaining: 0
   isNight: 0
   isHot: 0
-  moneytext: {fileID: 1543301084}
+  uIController: {fileID: 1278329163}
   defenses: []
   monsterPrefabs:
   - {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
@@ -10363,12 +10364,8 @@ MonoBehaviour:
   - {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
   - {fileID: 3074657719725428346, guid: cbbcf6e267045b043ae0a5d0debc8280, type: 3}
   - {fileID: 528104615065489744, guid: e3b746fef223ad24f83c99406d6087ca, type: 3}
-  roundIndicator: {fileID: 973811330}
-  roundText: {fileID: 500730062}
-  blinkDuration: 10
-  blinkCount: 10
   monsterPerRound: 3
-  NEMoney: {fileID: 76829111}
+  difficultyConfig: {}
 --- !u!4 &1278329160
 Transform:
   m_ObjectHideFlags: 0
@@ -10419,6 +10416,24 @@ MonoBehaviour:
   - {fileID: 1227814046}
   upgradePriceUI: {fileID: 672133674}
   upgradePriceStep: 100
+--- !u!114 &1278329163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1278329158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecb8ce9a1fcf95a499490352460f4a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blinkDuration: 10
+  blinkCount: 10
+  NEMoney: {fileID: 76829111}
+  roundIndicator: {fileID: 973811330}
+  roundText: {fileID: 500730062}
+  moneytext: {fileID: 1543301084}
 --- !u!1 &1347234834
 GameObject:
   m_ObjectHideFlags: 0

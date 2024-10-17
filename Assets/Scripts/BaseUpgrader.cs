@@ -22,13 +22,11 @@ public class BaseUpgrader : MonoBehaviour
             {
                 if (castles[i].activeSelf)
                 {
-                    Debug.Log(castles[i].name);
                     currentCastle = castles[i];
 
                     if (i + 1 < castles.Length)
                     {
                         nextCastle = castles[i + 1];
-                        Debug.Log("next castle: " + nextCastle.name);
                         break;
                     }
                 }
@@ -36,7 +34,7 @@ public class BaseUpgrader : MonoBehaviour
 
             if (currentCastle != null && nextCastle != null)
             {
-                gameManager.updateMoney(-upgradePrice);
+                gameManager.updateMoney(-upgradePrice, true);
                 upgradePriceUI.text = (upgradePrice + upgradePriceStep).ToString();
             }
             else
@@ -47,7 +45,7 @@ public class BaseUpgrader : MonoBehaviour
         else
         {
             Debug.Log("Not enough money!");
-            gameManager.notEnoughMoney();
+            gameManager.uIController.notEnoughMoney();
         }
     }
 }
