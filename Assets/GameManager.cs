@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     private int monstersKilled = 0;
     public int monsterPerRound;
 
+    public GameObject[] castles;
+
     void Start()
     {
         if (WeatherServiceEnabled)
@@ -48,7 +50,39 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    
+
+    public void upgradeBase()
+    {
+        // Find the currently active (enabled) castle
+        GameObject currentCastle = null;
+        GameObject nextCastle = null;
+        for (int i = 0; i < castles.Length; i++)
+        {
+            if (castles[i].activeSelf)
+            {
+                Debug.Log(castles[i].name);
+                currentCastle = castles[i];
+
+                if (i + 1 < castles.Length)
+                {
+                    nextCastle = castles[i + 1];
+                    Debug.Log("next castle: " + nextCastle.name);
+                    break;
+                }
+            }
+        }
+
+        if (currentCastle != null && nextCastle != null)
+        {
+            nextCastle.SetActive(true);
+            currentCastle.SetActive(false);
+        }
+        else
+        {
+            Debug.LogWarning("No castle to upgrade to, or all castles are upgraded.");
+        }
+    }
+
     public int getNumMonstersRound()
     {
         return monsterPerRound; // TODO: the number of max monsters created in each round should depend on the round number
