@@ -11,7 +11,6 @@ public class WallController : DefensiveStructure
     private List<Animator> archerAnimators = new List<Animator>();
     private List<Vector3> archerHighestPoints = new List<Vector3>();
     private float archerRotationSpeed = 30f;
-    public GameObject arrowPrefab;
 
     private bool _canAttack = true;
     private float _stunTimer = 0f;
@@ -105,7 +104,7 @@ public class WallController : DefensiveStructure
 
                 Vector3 arrowPosition = archer.transform.position;
                 arrowPosition.y = (float)(archer.position.y + (highestPoint.y - archer.position.y) * 0.75);
-                GameObject arrow = Instantiate(arrowPrefab, arrowPosition, archer.rotation);
+                GameObject arrow = Instantiate(projectilePrefab, arrowPosition, archer.rotation);
 
                 ArrowController arrowScript = arrow.GetComponent<ArrowController>();
                 arrowScript.setTarget(currentTarget);
