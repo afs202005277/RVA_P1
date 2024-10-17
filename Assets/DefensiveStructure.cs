@@ -52,8 +52,12 @@ public abstract class DefensiveStructure : MonoBehaviour
 
     void Update()
     {
-        DetectMonsters();
+        DetectAndAttack();
+    }
 
+    protected void DetectAndAttack()
+    {
+        DetectMonsters();
         if (currentTarget != null && Time.time >= nextAttackTime)
         {
             Attack();

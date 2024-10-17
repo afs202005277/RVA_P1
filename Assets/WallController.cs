@@ -79,6 +79,18 @@ public class WallController : DefensiveStructure
         _canAttack = true;
         _stunTimer = 0f;
     }
+
+    void Update()
+    {
+        DetectAndAttack();
+        if (currentTarget == null)
+        {
+            foreach (Animator animator in archerAnimators)
+            {
+                animator.SetTrigger("TargetLost");
+            }
+        }
+    }
     protected override void Attack()
     {
         if (!_canAttack)
