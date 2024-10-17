@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
     public int monsterPerRound;
 
     public GameObject[] castles;
+    public TextMeshProUGUI upgradePriceUI;
+    public int upgradePriceStep;
+
+    public CanvasGroup NEMoney;
 
     void Start()
     {
@@ -53,34 +57,51 @@ public class GameManager : MonoBehaviour
 
     public void upgradeBase()
     {
-        // Find the currently active (enabled) castle
-        GameObject currentCastle = null;
-        GameObject nextCastle = null;
-        for (int i = 0; i < castles.Length; i++)
-        {
-            if (castles[i].activeSelf)
-            {
-                Debug.Log(castles[i].name);
-                currentCastle = castles[i];
+        int upgradePrice = int.Parse(upgradePriceUI.text);
 
-                if (i + 1 < castles.Length)
+        if (currentMoney >= upgradePrice)
+        {
+            GameObject currentCastle = null;
+            GameObject nextCastle = null;
+            for (int i = 0; i < castles.Length; i++)
+            {
+                if (castles[i].activeSelf)
                 {
-                    nextCastle = castles[i + 1];
-                    Debug.Log("next castle: " + nextCastle.name);
-                    break;
+                    Debug.Log(castles[i].name);
+                    currentCastle = castles[i];
+
+                    if (i + 1 < castles.Length)
+                    {
+                        nextCastle = castles[i + 1];
+                        Debug.Log("next castle: " + nextCastle.name);
+                        break;
+                    }
                 }
             }
-        }
 
-        if (currentCastle != null && nextCastle != null)
-        {
-            nextCastle.SetActive(true);
-            currentCastle.SetActive(false);
+            if (currentCastle != null && nextCastle != null)
+            {
+                currentMoney -= upgradePrice;
+                overrideUpdate = true;
+                nextCastle.SetActive(true);
+                currentCastle.SetActive(false);
+                upgradePriceUI.text = (upgradePrice + upgradePriceStep).ToString();
+            }
+            else
+            {
+                Debug.LogWarning("No castle to upgrade to, or all castles are upgraded.");
+            }
         }
         else
         {
-            Debug.LogWarning("No castle to upgrade to, or all castles are upgraded.");
+            Debug.Log("Not enough money!");
+            notEnoughMoney();
         }
+    }
+
+    public void notEnoughMoney()
+    {
+        StartCoroutine(FadeInAndOut(NEMoney, 0.5f));
     }
 
     public int getNumMonstersRound()
@@ -227,5 +248,30 @@ public class GameManager : MonoBehaviour
     {
         this.currentMoney += coins;
         overrideUpdate = true;
+    }
+
+    private IEnumerator FadeInAndOut(CanvasGroup canvasGroup, float fadeDuration)
+    {
+        yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 0, 1, fadeDuration));
+
+        // Keep the canvas visible for a short time
+        yield return new WaitForSeconds(0.5f);
+
+        // Fade out and deactivate
+        yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 1, 0, fadeDuration));
+    }
+
+    private IEnumerator FadeCanvasGroup(CanvasGroup canvasGroup, float startAlpha, float endAlpha, float duration)
+    {
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            canvasGroup.alpha = Mathf.Lerp(startAlpha, endAlpha, elapsedTime / duration);
+            yield return null;
+        }
+
+        canvasGroup.alpha = endAlpha;
     }
 }
