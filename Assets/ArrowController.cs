@@ -104,7 +104,6 @@ public class ArrowController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Stuck in: " + collision.gameObject.name);
         Stick();
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Monsters")
         {

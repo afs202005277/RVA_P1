@@ -16,7 +16,9 @@ public class DifficultyConfig
             { "Chomper", new MonsterSettings(0.9f, 0.9f, 0.9f, 55f) },
             { "Spitter", new MonsterSettings(0.9f, 0.9f, 0.9f, 30f) }
         },
-        1.2f // Passive money earned for Easy
+        1.2f, // Passive money earned for Easy
+        100.0f, // cost of wall
+        150.0f // cost of tower
     );
     public DifficultySettings MediumSettings = new DifficultySettings(
         new DefensiveStructureSettings(1.0f, 1.0f, 1.0f, 1.0f), // Tower and Wall settings for Medium
@@ -29,7 +31,9 @@ public class DifficultyConfig
             { "Chomper", new MonsterSettings(1.0f, 1.0f, 1.0f, 55f) },
             { "Spitter", new MonsterSettings(1.0f, 1.0f, 1.0f, 30f) }
         },
-        1.0f // Passive money earned for Medium
+        100.0f, // Passive money earned for Medium
+        120.0f, // cost of wall
+        170.0f // cost of tower
     );
     public DifficultySettings HardSettings = new DifficultySettings(
         new DefensiveStructureSettings(0.8f, 0.8f, 0.8f, 0.9f), // Tower and Wall settings for Hard
@@ -42,7 +46,9 @@ public class DifficultyConfig
             { "Chomper", new MonsterSettings(1.1f, 1.1f, 1.1f, 55f) },
             { "Spitter", new MonsterSettings(1.1f, 1.1f, 1.1f, 30f) }
         },
-        0.8f // Passive money earned for Hard
+        0.8f, // Passive money earned for Hard
+        150.0f, // cost of wall
+        200.0f // cost of tower
     );
 
     public DifficultySettings GetSettings(int difficulty)

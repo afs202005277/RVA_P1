@@ -98,4 +98,9 @@ public class GameManager : MonoBehaviour
     {
         return currentMoney;
     }
+
+    public void addDefense(GameObject defense)
+    {
+        defenses.Add(defense);
+    }
 }
