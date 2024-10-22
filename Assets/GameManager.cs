@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class GameManager : MonoBehaviour
     public bool isRaining;
     public bool isNight;
     public bool isHot;
+
+    public Light skylight;
+    public Color dayColor;
+    public Color nightColor;
+
+    public ParticleSystem rainParticles;
 
     public UIController uIController;
 
@@ -32,7 +39,9 @@ public class GameManager : MonoBehaviour
         {
             StartCoroutine(Init());
         }
-        
+
+        setGameWeather();
+
         currentDifficultySettings = difficultyConfig.GetSettings(PlayerPrefs.GetInt("difficulty", 1));
 
         GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
@@ -43,6 +52,12 @@ public class GameManager : MonoBehaviour
                 defenses.Add(obj);
             }
         }
+    }
+
+    public void setGameWeather()
+    {
+        skylight.color = isNight ? nightColor : dayColor;
+        if (isRaining) rainParticles.Play();
     }
 
     public int getNumMonstersRound()
@@ -71,6 +86,8 @@ public class GameManager : MonoBehaviour
         isRaining = weatherService.IsRaining();
         isNight = weatherService.IsNight();
         isHot = weatherService.IsHot();
+
+        setGameWeather();
     }
 
     void Update()
