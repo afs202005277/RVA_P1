@@ -10,6 +10,11 @@ public class BaseUpgrader : MonoBehaviour
     public TextMeshProUGUI upgradePriceUI;
     public int upgradePriceStep;
 
+    private void Start()
+    {
+        gameManager.currentCastle = castles[0];
+    }
+
     public void upgradeBase()
     {
         int upgradePrice = int.Parse(upgradePriceUI.text);
@@ -36,6 +41,12 @@ public class BaseUpgrader : MonoBehaviour
             {
                 gameManager.updateMoney(-upgradePrice, true);
                 upgradePriceUI.text = (upgradePrice + upgradePriceStep).ToString();
+                currentCastle.SetActive(false);
+                nextCastle.SetActive(true);
+                nextCastle.transform.position = currentCastle.transform.position;
+                nextCastle.transform.rotation = currentCastle.transform.rotation;
+                nextCastle.transform.SetParent(currentCastle.transform.parent);
+                gameManager.currentCastle = nextCastle;
             }
             else
             {

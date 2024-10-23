@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class BaseController : DefensiveStructure
+public class BaseController : MonoBehaviour
 {
-
+    public float health;
     private float _burnTimer = 0f;
+    private bool _burning = false;
 
-    public override void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
 
@@ -17,12 +19,7 @@ public class BaseController : DefensiveStructure
         }
     }
 
-    public override void Stun(float seconds)
-    {
-        return; // No Effect on Base
-    }
-
-    public override void Burn(float seconds)
+    public void Burn(float seconds)
     {
         if (_burning)
         {
@@ -49,15 +46,8 @@ public class BaseController : DefensiveStructure
         _burnTimer = 0f;
     }
 
-    protected override void DestroyObject()
+    protected void DestroyObject()
     {
         Debug.Log("GAME FINISHED");
-        base.DestroyObject();
     }
-
-    protected override void Attack()
-    {
-        return;
-    }
-
 }

@@ -8,7 +8,7 @@ public class UIController : MonoBehaviour
 {
     public float blinkDuration;       // Total time for blinking 10
     public int blinkCount;             // How many times it should blink 10
-    public CanvasGroup NEMoney;
+    public CanvasGroup warningsCanvas;
 
     public TextMeshProUGUI roundIndicator;
     public TextMeshProUGUI roundText;
@@ -18,9 +18,21 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI moneytext;
 
+    public String notEnoughMoneyMessage; // = "Not enough money!"
+    public String maxDefensesReachedMessage;
+
     public void notEnoughMoney()
     {
-        StartCoroutine(FadeInAndOut(NEMoney, 0.5f));
+        TextMeshProUGUI text = warningsCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = notEnoughMoneyMessage;
+        StartCoroutine(FadeInAndOut(warningsCanvas, 0.5f));
+    }
+
+    public void maxDefensesReached()
+    {
+        TextMeshProUGUI text = warningsCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = maxDefensesReachedMessage;
+        StartCoroutine(FadeInAndOut(warningsCanvas, 0.5f));
     }
 
     public void roundEnded(Action onBlinkCompleteCallback, int currentRound)

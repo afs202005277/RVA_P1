@@ -33,6 +33,11 @@ public class GameManager : MonoBehaviour
 
     public DifficultyConfig difficultyConfig;
 
+    public int maxDefenses;
+    private int initialDefenses;
+
+    public GameObject currentCastle;
+
     void Start()
     {
         if (WeatherServiceEnabled)
@@ -51,6 +56,7 @@ public class GameManager : MonoBehaviour
             {
                 defenses.Add(obj);
             }
+            initialDefenses = defenses.Count;
         }
     }
 
@@ -119,5 +125,10 @@ public class GameManager : MonoBehaviour
     public void addDefense(GameObject defense)
     {
         defenses.Add(defense);
+    }
+
+    public bool canPlaceDefense()
+    {
+        return defenses.Count < maxDefenses + initialDefenses;
     }
 }

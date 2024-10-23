@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="castle_scifi" size="1.000000 0.581923" />
+    <ImageTarget name="wall_scifi" size="1.000000 0.560417" />
+    <ImageTarget name="tower_scifi" size="1.000000 1.000000" />
+    <ImageTarget name="castle_medieval" size="1.000000 0.928050" />
+    <ImageTarget name="tower_medieval" size="1.000000 1.504113" />
+    <ImageTarget name="wall_medieval" size="1.000000 1.501199" />
+  </Tracking>
+</QCARConfig>

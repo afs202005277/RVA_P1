@@ -263,7 +263,7 @@ MonoBehaviour:
   monstersLayer:
     serializedVersion: 2
     m_Bits: 0
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 8300271018335448625, guid: d331a1d9e8fe310469104caf93c99152, type: 3}
 --- !u!65 &755490434021508852
 BoxCollider:
   m_ObjectHideFlags: 0
