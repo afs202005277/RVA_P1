@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    public Transform castleCenter;       // The center point (castle)
+    private Transform castleCenter;       // The center point (castle)
     public float spawnRadius = 20f;      // The radius of the perimeter circle
     public float spawnRate = 3f;         // How often zombies will spawn (in seconds)
     private int maxEnemies;       // The maximum number of enemies that can be spawned
@@ -44,6 +44,8 @@ public class MonsterSpawner : MonoBehaviour
             SpawnMonster();
             nextSpawnTime = Time.time + spawnRate;  // Set the next spawn time
         }
+
+        castleCenter = gameManager.currentCastle.transform;
     }
 
     void SpawnMonster()

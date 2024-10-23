@@ -7,14 +7,13 @@ public class ConstructionController : MonoBehaviour
     public GameManager gameManager;
     public GameObject towerPrefab;
     public GameObject wallPrefab;
-    private GameObject current;
+    private GameObject current = null;
 
     private void Update()
     {
         if (current != null)
         {
-            current.transform.position = transform.position;
-            current.transform.rotation = Quaternion.Euler(0, 0, 0);
+            current.transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, 0, 0));
         }
     }
 

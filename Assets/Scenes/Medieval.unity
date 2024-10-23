@@ -8722,11 +8722,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1249003870}
   m_SourcePrefab: {fileID: 100100000, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
---- !u!4 &189956342 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2537697712075148959, guid: f2aacdd495b361648a3aac67baae8fae, type: 3}
-  m_PrefabInstance: {fileID: 1107190516}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216645072
 GameObject:
   m_ObjectHideFlags: 0
@@ -8739,7 +8734,7 @@ GameObject:
   - component: {fileID: 216645076}
   - component: {fileID: 216645075}
   - component: {fileID: 216645074}
-  - component: {fileID: 216645073}
+  - component: {fileID: 216645078}
   m_Layer: 0
   m_Name: TowerCard (3)
   m_TagString: Untagged
@@ -8747,25 +8742,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &216645073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216645072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 216645076}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: tower_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 216645076}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &216645074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8836,19 +8812,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &216645076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8864,18 +8828,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: tower_medieval
+  mTrackableName: tower_medieval_3
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/BaseDefense.xml
-  mAspectRatio: 1.504113
+  mAspectRatio: 1.503759
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.504113
+  mHeight: 1.503759
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 216645073}
+  mPreview: {fileID: 216645078}
 --- !u!4 &216645077
 Transform:
   m_ObjectHideFlags: 0
@@ -8891,6 +8855,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &216645078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216645072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 216645076}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tower_medieval_3
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 216645076}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &231351255
 GameObject:
   m_ObjectHideFlags: 0
@@ -9065,19 +9048,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &261096949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9154,6 +9125,11 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 261096949}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!218 &431573151 stripped
+Terrain:
+  m_CorrespondingSourceObject: {fileID: 6694795748750997520, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+  m_PrefabInstance: {fileID: 2016517813}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &457533696
 GameObject:
   m_ObjectHideFlags: 0
@@ -9183,12 +9159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347b0fa17ae647142872e5240fcb3cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castleCenter: {fileID: 189956342}
   spawnRadius: 30
   spawnRate: 3
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
-  terrain: {fileID: 0}
+  terrain: {fileID: 431573151}
 --- !u!4 &457533698
 Transform:
   m_ObjectHideFlags: 0
@@ -9470,8 +9445,8 @@ GameObject:
   - component: {fileID: 533249824}
   - component: {fileID: 533249823}
   - component: {fileID: 533249822}
-  - component: {fileID: 533249821}
   - component: {fileID: 533249825}
+  - component: {fileID: 533249826}
   m_Layer: 0
   m_Name: CastleCard
   m_TagString: Untagged
@@ -9479,25 +9454,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &533249821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533249819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 533249823}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: castle_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 533249823}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &533249822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9580,7 +9536,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 533249821}
+  mPreview: {fileID: 533249826}
 --- !u!4 &533249824
 Transform:
   m_ObjectHideFlags: 0
@@ -9610,6 +9566,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1278329159}
   castlePlaceholder: {fileID: 782736431}
+--- !u!114 &533249826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533249819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 533249823}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: castle_medieval
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 533249823}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &672133672
 GameObject:
   m_ObjectHideFlags: 0
@@ -9815,7 +9790,7 @@ GameObject:
   - component: {fileID: 799884132}
   - component: {fileID: 799884131}
   - component: {fileID: 799884130}
-  - component: {fileID: 799884129}
+  - component: {fileID: 799884134}
   m_Layer: 0
   m_Name: WallCard (2)
   m_TagString: Untagged
@@ -9823,25 +9798,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &799884129
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 799884128}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 799884132}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: wall_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 799884132}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &799884130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9912,19 +9868,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &799884132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9940,18 +9884,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: wall_medieval
+  mTrackableName: wall_medieval_2
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/BaseDefense.xml
-  mAspectRatio: 1.501199
+  mAspectRatio: 1.500697
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.501199
+  mHeight: 1.500697
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 799884129}
+  mPreview: {fileID: 799884134}
 --- !u!4 &799884133
 Transform:
   m_ObjectHideFlags: 0
@@ -9967,6 +9911,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &799884134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799884128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 799884132}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: wall_medieval_2
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 799884132}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &802423943
 GameObject:
   m_ObjectHideFlags: 0
@@ -10272,7 +10235,7 @@ GameObject:
   - component: {fileID: 951686567}
   - component: {fileID: 951686566}
   - component: {fileID: 951686565}
-  - component: {fileID: 951686564}
+  - component: {fileID: 951686569}
   m_Layer: 0
   m_Name: WallCard
   m_TagString: Untagged
@@ -10280,25 +10243,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &951686564
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 951686563}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 951686567}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: wall_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 951686567}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &951686565
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10369,19 +10313,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &951686567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10408,7 +10340,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 951686564}
+  mPreview: {fileID: 951686569}
 --- !u!4 &951686568
 Transform:
   m_ObjectHideFlags: 0
@@ -10424,6 +10356,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &951686569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951686563}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 951686567}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: wall_medieval
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 951686567}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &973811328
 GameObject:
   m_ObjectHideFlags: 0
@@ -10899,7 +10850,7 @@ GameObject:
   - component: {fileID: 1234852210}
   - component: {fileID: 1234852209}
   - component: {fileID: 1234852208}
-  - component: {fileID: 1234852207}
+  - component: {fileID: 1234852212}
   m_Layer: 0
   m_Name: TowerCard (2)
   m_TagString: Untagged
@@ -10907,25 +10858,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1234852207
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234852206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1234852210}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: tower_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 1234852210}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1234852208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10996,19 +10928,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &1234852210
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11024,18 +10944,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: tower_medieval
+  mTrackableName: tower_medieval_2
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/BaseDefense.xml
-  mAspectRatio: 1.504113
+  mAspectRatio: 1.503759
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.504113
+  mHeight: 1.503759
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1234852207}
+  mPreview: {fileID: 1234852212}
 --- !u!4 &1234852211
 Transform:
   m_ObjectHideFlags: 0
@@ -11051,6 +10971,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1234852212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1234852206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1234852210}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tower_medieval_2
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 1234852210}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1249003868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1235318636212099931, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
@@ -16115,7 +16054,7 @@ GameObject:
   - component: {fileID: 1462756786}
   - component: {fileID: 1462756785}
   - component: {fileID: 1462756784}
-  - component: {fileID: 1462756783}
+  - component: {fileID: 1462756788}
   m_Layer: 0
   m_Name: WallCard (1)
   m_TagString: Untagged
@@ -16123,25 +16062,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1462756783
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1462756782}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1462756786}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: wall_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 1462756786}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1462756784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16212,19 +16132,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &1462756786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16240,18 +16148,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: wall_medieval
+  mTrackableName: wall_medieval_1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/BaseDefense.xml
-  mAspectRatio: 1.501199
+  mAspectRatio: 1.500697
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.501199
+  mHeight: 1.500697
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1462756783}
+  mPreview: {fileID: 1462756788}
 --- !u!4 &1462756787
 Transform:
   m_ObjectHideFlags: 0
@@ -16267,6 +16175,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1462756788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462756782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1462756786}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: wall_medieval_1
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 1462756786}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1543301082
 GameObject:
   m_ObjectHideFlags: 0
@@ -16413,7 +16340,7 @@ GameObject:
   - component: {fileID: 1630586730}
   - component: {fileID: 1630586729}
   - component: {fileID: 1630586728}
-  - component: {fileID: 1630586727}
+  - component: {fileID: 1630586732}
   m_Layer: 0
   m_Name: TowerCard (1)
   m_TagString: Untagged
@@ -16421,25 +16348,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1630586727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630586726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1630586730}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: tower_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 1630586730}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1630586728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16510,19 +16418,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &1630586730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16538,18 +16434,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: tower_medieval
+  mTrackableName: tower_medieval_1
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/BaseDefense.xml
-  mAspectRatio: 1.504113
+  mAspectRatio: 1.503759
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.504113
+  mHeight: 1.503759
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1630586727}
+  mPreview: {fileID: 1630586732}
 --- !u!4 &1630586731
 Transform:
   m_ObjectHideFlags: 0
@@ -16565,6 +16461,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1630586732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1630586726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1630586730}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: tower_medieval_1
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 1630586730}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1727510670
 GameObject:
   m_ObjectHideFlags: 0
@@ -17042,6 +16957,67 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010561816}
   m_CullTransparentMesh: 1
+--- !u!1001 &2016517813
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3477138163447949089, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_Name
+      value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 3477138163447949089, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -75.33546
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.323433
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -74.42238
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7905445271359094669, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f4e479d6ebec5f4cbbda0cd7f8b8ded, type: 3}
 --- !u!1 &2038018991
 GameObject:
   m_ObjectHideFlags: 0
@@ -17054,7 +17030,7 @@ GameObject:
   - component: {fileID: 2038018995}
   - component: {fileID: 2038018994}
   - component: {fileID: 2038018993}
-  - component: {fileID: 2038018992}
+  - component: {fileID: 2038018997}
   m_Layer: 0
   m_Name: WallCard (3)
   m_TagString: Untagged
@@ -17062,25 +17038,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2038018992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2038018991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 2038018995}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: wall_medieval
-  mDatasetName: Vuforia/BaseDefense.xml
-  mCastedBehaviour: {fileID: 2038018995}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &2038018993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17151,19 +17108,7 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 216645074}
-        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
-        m_MethodName: onTargetLost
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
+      m_Calls: []
 --- !u!114 &2038018995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17179,18 +17124,18 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: wall_medieval
+  mTrackableName: wall_medieval_3
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/BaseDefense.xml
-  mAspectRatio: 1.501199
+  mAspectRatio: 1.500697
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 1.501199
+  mHeight: 1.500697
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 2038018992}
+  mPreview: {fileID: 2038018997}
 --- !u!4 &2038018996
 Transform:
   m_ObjectHideFlags: 0
@@ -17206,6 +17151,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2038018997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2038018991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 2038018995}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: wall_medieval_3
+  mDatasetName: Vuforia/BaseDefense.xml
+  mCastedBehaviour: {fileID: 2038018995}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1001 &2063075866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17466,3 +17430,4 @@ SceneRoots:
   - {fileID: 126865242}
   - {fileID: 533249824}
   - {fileID: 782736432}
+  - {fileID: 2016517813}
