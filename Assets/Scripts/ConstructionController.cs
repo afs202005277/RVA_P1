@@ -6,6 +6,9 @@ public class ConstructionController : MonoBehaviour
 {
     public GameManager gameManager;
     private bool isTracking = false;
+    public GameObject towerPrefab;
+    public GameObject wallPrefab;
+    private GameObject current;
 
     public List<Transform> GetDirectChildren(Transform obj)
     {
@@ -17,6 +20,14 @@ public class ConstructionController : MonoBehaviour
         }
 
         return children;
+    }
+
+    private void Update()
+    {
+        if (current != null)
+        {
+            current.transform.position = transform.position;
+        }
     }
     public void onTowerFound()
     {
@@ -33,19 +44,19 @@ public class ConstructionController : MonoBehaviour
     {
         while (isTracking)
         {
-            Transform tower = transform.GetChild(0);
             float towerCost = gameManager.CurrentDifficultySettings.TowerCost;
             if (gameManager.getCurrentMoney() >= towerCost)
             {
-                tower.gameObject.SetActive(true);
-                gameManager.addDefense(tower.gameObject);
+                GameObject tower = Instantiate(towerPrefab, transform.position, Quaternion.Euler(0, 0, 0));
+                tower.GetComponent<MovableTowerController>().gameManager = gameManager;
+                current = tower;
+                gameManager.addDefense(gameObject);
                 gameManager.updateMoney(-towerCost, true);
                 isTracking = false;
                 yield break;
             }
             else
             {
-                tower.gameObject.SetActive(false);
                 gameManager.uIController.notEnoughMoney();
                 Debug.Log("Not enough money to instantiate tower.");
             }
