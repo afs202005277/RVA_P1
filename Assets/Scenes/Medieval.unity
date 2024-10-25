@@ -9159,7 +9159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347b0fa17ae647142872e5240fcb3cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRadius: 30
+  spawnRadius: 4
   spawnRate: 3
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
@@ -10607,7 +10607,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4723572142787718596, guid: f2aacdd495b361648a3aac67baae8fae, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4723572142787718596, guid: f2aacdd495b361648a3aac67baae8fae, type: 3}
       propertyPath: m_TagString

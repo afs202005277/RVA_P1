@@ -23,6 +23,7 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
+        speed /= 5f; // scale
         animator.SetBool("isWalking", true);
         cameraTransform = Camera.main.transform;
         Debug.Log($"AFSDEBUGGING: (monster controller): Monster Spawned: {transform.position.x}, {transform.position.y}, {transform.position.z}");
@@ -95,7 +96,10 @@ public class MonsterController : MonoBehaviour
     
     public void DealDamage()
     {
-        currentDefense.GetComponent<DefensiveStructure>().TakeDamage(damage);
+        if (currentDefense.GetComponent<DefensiveStructure>())
+            currentDefense.GetComponent<DefensiveStructure>().TakeDamage(damage);
+        else if (currentDefense.GetComponent<BaseController>())
+            currentDefense.GetComponent<BaseController>().TakeDamage(damage);
     }
 
     public void ScavengerDealDamage()
