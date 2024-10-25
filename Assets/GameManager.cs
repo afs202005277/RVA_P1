@@ -82,7 +82,7 @@ public class GameManager : MonoBehaviour
 
     public void roundEnded()
     {
-        Debug.Log("Round ended");
+        Debug.Log("AFSDEBUGGING: Round ended");
         uIController.roundEnded(() => currentRound++, currentRound);
     }
 

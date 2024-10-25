@@ -53,14 +53,18 @@ public class ArrowController : MonoBehaviour
         Vector3 copy = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         //drawSphere(copy, Color.green);
         //drawLine(transform.position, velocity.normalized, Color.red);
-        if (velocity != Vector3.zero)
+        if (ContainsNaN(velocity))
+        {
+            Destroy(gameObject);
+        }
+        else if (velocity != Vector3.zero)
         {
             // Apply the calculated velocity to the arrow's Rigidbody
             rb.velocity = velocity;
         }
         else
         {
-            Debug.LogWarning("No valid trajectory found!");
+            Debug.LogWarning("AFSDEBUGGING: No valid trajectory found!");
         }
     }
 
@@ -164,5 +168,10 @@ public class ArrowController : MonoBehaviour
 
         lineRenderer.SetPosition(0, start);
         lineRenderer.SetPosition(1, start + direction.normalized*100);
+    }
+
+    bool ContainsNaN(Vector3 vector)
+    {
+        return float.IsNaN(vector.x) || float.IsNaN(vector.y) || float.IsNaN(vector.z);
     }
 }

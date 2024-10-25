@@ -31,6 +31,10 @@ public class MonsterSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.currentCastle != null)
+        {
+            castleCenter = gameManager.currentCastle.transform;
+        }
         int tmp = gameManager.getNumMonstersRound();
         if (maxEnemies < tmp)
         {
@@ -39,13 +43,11 @@ public class MonsterSpawner : MonoBehaviour
             enemyCount = 0;
         }
         // Check if it's time to spawn a new zombie
-        if (Time.time >= nextSpawnTime && enemyCount < maxEnemies)
+        if (Time.time >= nextSpawnTime && enemyCount < maxEnemies && gameManager.defenses.Count > 0)
         {
             SpawnMonster();
             nextSpawnTime = Time.time + spawnRate;  // Set the next spawn time
         }
-
-        castleCenter = gameManager.currentCastle.transform;
     }
 
     void SpawnMonster()

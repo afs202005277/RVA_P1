@@ -25,6 +25,7 @@ public class MonsterController : MonoBehaviour
     {
         animator.SetBool("isWalking", true);
         cameraTransform = Camera.main.transform;
+        Debug.Log($"AFSDEBUGGING: (monster controller): Monster Spawned: {transform.position.x}, {transform.position.y}, {transform.position.z}");
     }   
 
     void Update()
@@ -69,6 +70,7 @@ public class MonsterController : MonoBehaviour
             return;
         }
 
+        Debug.Log($"AFSDEBUGGING: (monster controller): Monster Moved: {transform.position.x}, {transform.position.y}, {transform.position.z}");
     }
 
     public void applyDifficultySettings(MonsterSettings settings)

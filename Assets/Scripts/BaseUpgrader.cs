@@ -50,12 +50,12 @@ public class BaseUpgrader : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("No castle to upgrade to, or all castles are upgraded.");
+                Debug.LogWarning("AFSDEBUGGING: No castle to upgrade to, or all castles are upgraded.");
             }
         }
         else
         {
-            Debug.Log("Not enough money!");
+            Debug.Log("AFSDEBUGGING: Not enough money!");
             gameManager.uIController.notEnoughMoney();
         }
     }

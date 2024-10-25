@@ -48,6 +48,6 @@ public class BaseController : MonoBehaviour
 
     protected void DestroyObject()
     {
-        Debug.Log("GAME FINISHED");
+        Debug.Log("AFSDEBUGGING: GAME FINISHED");
     }
 }

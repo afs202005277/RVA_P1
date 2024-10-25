@@ -56,7 +56,7 @@ public class ConstructionController : MonoBehaviour
             if (!gameManager.canPlaceDefense())
             {
                 gameManager.uIController.notEnoughMoney();
-                Debug.Log("Maximum number of defenses reached.");
+                Debug.Log("AFSDEBUGGING: Maximum number of defenses reached.");
             }
             else if (gameManager.getCurrentMoney() >= cost)
             {
@@ -70,7 +70,7 @@ public class ConstructionController : MonoBehaviour
             else
             {
                 gameManager.uIController.notEnoughMoney();
-                Debug.Log("Not enough money to instantiate tower.");
+                Debug.Log("AFSDEBUGGING: Not enough money to instantiate tower.");
             }
 
             yield return new WaitForSeconds(0.5f);

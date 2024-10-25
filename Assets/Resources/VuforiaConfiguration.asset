@@ -45,7 +45,7 @@ MonoBehaviour:
     thirdPartyARCoreClientDetected: 0
   playmode:
     mRecordingPath: C:/Users/andre/UnityProjects/BaseDefense/VID_20241023_181902.mp4
-    playModeType: 0
+    playModeType: 1
   webcam:
     renderTextureLayer: 30
   packageInformation:
