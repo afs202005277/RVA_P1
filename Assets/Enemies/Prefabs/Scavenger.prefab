@@ -754,7 +754,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   health: 10
   speed: 4
-  damage: 9
+  damage: 7
   stunTime: 1
   burnTime: 1
   coinPopupPrefab: {fileID: 0}
@@ -806,7 +806,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
