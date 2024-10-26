@@ -9,6 +9,12 @@ public class BaseController : MonoBehaviour
     private float _burnTimer = 0f;
     private bool _burning = false;
 
+
+    private void Start()
+    {
+        GameObject.Find("GameManager").GetComponent<GameManager>().addDefense(gameObject);
+    }
+
     public void TakeDamage(float damage)
     {
         health -= damage;

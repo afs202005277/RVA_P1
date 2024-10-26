@@ -106,6 +106,11 @@ public class GameManager : MonoBehaviour
         defenses.Remove(defense);
     }
 
+    public void AddDefense(GameObject defense)
+    {
+        defenses.Add(defense);
+    }
+
     public DifficultySettings CurrentDifficultySettings
     {
         get { return currentDifficultySettings; }
