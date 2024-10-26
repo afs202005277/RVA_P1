@@ -137,6 +137,7 @@ public class WallController : DefensiveStructure
         {
             animator.SetTrigger(currentTarget != null ? "TargetAcquired" : "TargetLost");
         }
+        Debug.Log($"Target: {currentTarget.name}");
         if (currentTarget != null)
         {
             for (int i = 0; i < archerTransforms.Count; i++)

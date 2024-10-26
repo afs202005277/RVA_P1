@@ -1,6 +1,7 @@
 using System;
 using Unity.VisualScripting;
 using UnityEngine;
+using Vuforia;
 
 public class ArrowController : MonoBehaviour
 {
@@ -14,12 +15,16 @@ public class ArrowController : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Arrow Created");
+        Debug.Log($"Arrow pos: {transform.position.x}, {transform.position.y}, {transform.position.z}");
         rb = GetComponent<Rigidbody>();
         LaunchArrow();
     }
 
     private void Update()
     {
+        Transform arCameraTransform = VuforiaBehaviour.Instance.transform;
+        Debug.Log($"Camera Pos: {arCameraTransform.position.x}, {arCameraTransform.position.y}, {arCameraTransform.position.z}");
         if (!isStuck)
         {
             transform.rotation = Quaternion.LookRotation(rb.velocity) * Quaternion.Euler(-90, 0, 0);
@@ -55,6 +60,7 @@ public class ArrowController : MonoBehaviour
         //drawLine(transform.position, velocity.normalized, Color.red);
         if (ContainsNaN(velocity))
         {
+            Debug.Log("Velocity with nan. Arrow destroyed.");
             Destroy(gameObject);
         }
         else if (velocity != Vector3.zero)
@@ -76,14 +82,19 @@ public class ArrowController : MonoBehaviour
 
         Vector3 archerPosition = transform.position;
         Vector3 monsterHeadPosition = center;
+
+        Debug.Log($"Monster pos: {monsterHeadPosition.x}, {monsterHeadPosition.y}, {monsterHeadPosition.z}");
+        Debug.Log($"Archer pos: {archerPosition.x}, {archerPosition.y}, {archerPosition.z}");
         //monsterPos.y = 0;
         //Vector3 monsterHeadPosition = monsterPos + Vector3.up * headPosition.y;
 
-        float heightDifference = monsterHeadPosition.y - archerPosition.y;
+        float heightDifference = (monsterHeadPosition.y - archerPosition.y);
 
         // Time to hit the monster's head based on vertical motion
         // t = sqrt(2 * heightDifference / g)
         float time = Mathf.Sqrt(2 * heightDifference / g);
+
+        Debug.Log($"Time: {time}");
 
         float vy = heightDifference / time;
 
@@ -103,11 +114,14 @@ public class ArrowController : MonoBehaviour
 
         velocity = horizontalVelocity + new Vector3(0, vy, 0);
 
+        Debug.Log($"Arrow velocity: {velocity.x}, {velocity.y}, {velocity.z}");
+        velocity.y = velocity.y / 6;
         return velocity;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        Debug.Log("Arrow collided!");
         Stick();
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Monsters")
         {
@@ -129,10 +143,6 @@ public class ArrowController : MonoBehaviour
 
     void StickToMonster(GameObject monster)
     {
-        rb.isKinematic = true;
-
-        GetComponent<Collider>().enabled = false;
-
         if (monster != null)
         {
             transform.SetParent(monster.transform);

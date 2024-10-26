@@ -34,6 +34,7 @@ public class MonsterSpawner : MonoBehaviour
         if (gameManager.currentCastle != null)
         {
             castleCenter = gameManager.currentCastle.transform;
+            terrain = gameManager.currentCastle.GetComponentInChildren<Terrain>();
         }
         int tmp = gameManager.getNumMonstersRound();
         if (maxEnemies < tmp)
@@ -105,11 +106,9 @@ public class MonsterSpawner : MonoBehaviour
 
         GameObject monster = Instantiate(monsterPrefab, spawnPosition, Quaternion.identity);
 
-        if (layerMask != -1) // Ensure the layer exists
-        {
-            if (monsterIndex != _nightMonster)
-                monster.layer = layerMask;
-        }
+        if (monsterIndex != _nightMonster)
+            monster.layer = layerMask;
+        Debug.Log($"LAYER: {LayerMask.LayerToName(monster.layer)}");
         MonsterController script = monster.GetComponent<MonsterController>();
         script.gameManager = gameManager;
         script.applyDifficultySettings(gameManager.CurrentDifficultySettings.MonsterSettings[monsterPrefab.name]);

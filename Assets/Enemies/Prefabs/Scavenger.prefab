@@ -754,7 +754,7 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   health: 10
   speed: 4
-  damage: 9
+  damage: 7
   stunTime: 1
   burnTime: 1
   coinPopupPrefab: {fileID: 0}
