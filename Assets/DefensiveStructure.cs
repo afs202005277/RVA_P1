@@ -37,6 +37,7 @@ public abstract class DefensiveStructure : MonoBehaviour
     void Start()
     {
         Initialize();
+        gameManager.addDefense(gameObject);
     }
 
     protected void Initialize()
