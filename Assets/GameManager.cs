@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -135,5 +136,10 @@ public class GameManager : MonoBehaviour
     public bool canPlaceDefense()
     {
         return defenses.Count < maxDefenses + initialDefenses;
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

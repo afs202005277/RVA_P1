@@ -26,7 +26,6 @@ public class MonsterController : MonoBehaviour
         speed /= 5f; // scale
         animator.SetBool("isWalking", true);
         cameraTransform = Camera.main.transform;
-        Debug.Log($"AFSDEBUGGING: (monster controller): Monster Spawned: {transform.position.x}, {transform.position.y}, {transform.position.z}");
     }   
 
     void Update()
@@ -71,7 +70,6 @@ public class MonsterController : MonoBehaviour
             return;
         }
 
-        Debug.Log($"AFSDEBUGGING: (monster controller): Monster Moved: {transform.position.x}, {transform.position.y}, {transform.position.z}");
     }
 
     public void applyDifficultySettings(MonsterSettings settings)
@@ -114,13 +112,15 @@ public class MonsterController : MonoBehaviour
     public void SpitterDealDamage()
     {
         DealDamage();
-        currentDefense.GetComponent<DefensiveStructure>().Stun(stunTime);
+        if (currentDefense.GetComponent<DefensiveStructure>())
+            currentDefense.GetComponent<DefensiveStructure>().Stun(stunTime);
     }
 
     public void ChomperDealDamage()
     {
         DealDamage();
-        currentDefense.GetComponent<DefensiveStructure>().Burn(burnTime);
+        if (currentDefense.GetComponent<DefensiveStructure>())
+            currentDefense.GetComponent<DefensiveStructure>().Burn(burnTime);
     }
 
     public void TakeDamage(float damage)
