@@ -6,6 +6,8 @@ using UnityEngine;
 public class BaseController : MonoBehaviour
 {
     public float health;
+
+    public GameObject gameOverScreen;
     private float _burnTimer = 0f;
     private bool _burning = false;
 
@@ -54,6 +56,6 @@ public class BaseController : MonoBehaviour
 
     protected void DestroyObject()
     {
-        Debug.Log("AFSDEBUGGING: GAME FINISHED");
+        gameOverScreen.SetActive(true);
     }
 }
