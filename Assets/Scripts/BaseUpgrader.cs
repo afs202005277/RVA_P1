@@ -41,6 +41,7 @@ public class BaseUpgrader : MonoBehaviour
             {
                 gameManager.updateMoney(-upgradePrice, true);
                 upgradePriceUI.text = (upgradePrice + upgradePriceStep).ToString();
+                gameManager.RemoveDefense(currentCastle);
                 currentCastle.SetActive(false);
                 nextCastle.SetActive(true);
                 nextCastle.transform.position = currentCastle.transform.position;

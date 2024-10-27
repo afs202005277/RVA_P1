@@ -56,6 +56,7 @@ public class BaseController : MonoBehaviour
 
     protected void DestroyObject()
     {
+        gameOverScreen.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = $"YOU SURVIDED {GameObject.Find("GameManager").GetComponent<GameManager>().currentRound} ROUNDS";
         gameOverScreen.SetActive(true);
     }
 }

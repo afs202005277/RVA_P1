@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class UIController : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI roundIndicator;
     public TextMeshProUGUI roundText;
+
+    public GameObject upgradeButton;
 
     private int frameCounter = 0;
     private const int updateInterval = 4;
@@ -43,6 +47,8 @@ public class UIController : MonoBehaviour
 
     IEnumerator BlinkRoundIndicator(float duration, int count, Action onBlinkCompleteCallback, int currentRound)
     {
+        upgradeButton.transform.GetChild(2).gameObject.SetActive(false);
+        upgradeButton.GetComponent<UnityEngine.UI.Button>().enabled = true;
         float fadeTime = duration / (count * 2); // Time for each fade in/out
         Color originalColor = roundIndicator.color;
         Color transparentColor = originalColor;
@@ -58,6 +64,8 @@ public class UIController : MonoBehaviour
         }
         onBlinkCompleteCallback.Invoke();
         roundIndicator.text = (currentRound+1).ToString();
+        upgradeButton.transform.GetChild(2).gameObject.SetActive(true);
+        upgradeButton.GetComponent<UnityEngine.UI.Button>().enabled = false;
     }
 
     IEnumerator FadeTo(Color targetColor, float duration)

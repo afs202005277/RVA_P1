@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> monsterPrefabs;
     private float currentMoney = 0;
     
-    private int currentRound = 1;
+    public int currentRound = 1;
 
     private int monstersKilled = 0;
     public int monsterPerRound;
@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(defenses.Count);
         updateMoney(currentDifficultySettings.PassiveMoneyEarned * Time.deltaTime, false);
     }
 

@@ -24,7 +24,6 @@ public class ArrowController : MonoBehaviour
     private void Update()
     {
         Transform arCameraTransform = VuforiaBehaviour.Instance.transform;
-        Debug.Log($"Camera Pos: {arCameraTransform.position.x}, {arCameraTransform.position.y}, {arCameraTransform.position.z}");
         if (!isStuck)
         {
             transform.rotation = Quaternion.LookRotation(rb.velocity) * Quaternion.Euler(-90, 0, 0);
