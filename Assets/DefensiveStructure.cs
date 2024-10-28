@@ -34,18 +34,15 @@ public abstract class DefensiveStructure : MonoBehaviour
     protected bool _burning = false;
     protected bool _burnCool = false;
 
+    private Collider collider;
+
     void Start()
     {
         Initialize();
-        gameManager.addDefense(gameObject);
     }
 
-    protected void Initialize()
+    protected void updateHighestPoint()
     {
-        monstersLayer = LayerMask.GetMask("Monsters");
-
-        Collider collider = gameObject.GetComponent<Collider>();
-
         if (collider != null)
         {
             Bounds bounds = collider.bounds;
@@ -53,8 +50,15 @@ public abstract class DefensiveStructure : MonoBehaviour
         }
         else
         {
-            //Debug.LogError("Collider not found on the tower.");
+            Debug.LogError("Collider not found on the tower.");
         }
+    }
+
+    protected void Initialize()
+    {
+        collider = gameObject.GetComponent<Collider>();
+        monstersLayer = LayerMask.GetMask("Monsters");
+        updateHighestPoint();
     }
 
     public abstract void TakeDamage(float damage);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BallController : MonoBehaviour
 {
-    public float speed = 10f;          // Speed of the cannonball
+    public float speed = 5f;          // Speed of the cannonball
     public float damage = 20f;         // Damage the cannonball applies
     private GameObject target;         // The target (zombie) for the cannonball
     private float margin = 0.2f;
@@ -45,7 +45,7 @@ public class BallController : MonoBehaviour
         {
             transform.position += direction * speed * Time.deltaTime;
         }
-        Debug.Log($"Cannon ball Update Position: {transform.position.x}, {transform.position.y}, {transform.position.z}");
+        Debug.Log($"BallMov: Cannon ball Update Position: {transform.position.x}, {transform.position.y}, {transform.position.z}");
     }
 
     void OnCollisionEnter(Collision collision)

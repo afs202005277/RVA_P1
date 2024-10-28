@@ -137,9 +137,9 @@ public class WallController : DefensiveStructure
         {
             animator.SetTrigger(currentTarget != null ? "TargetAcquired" : "TargetLost");
         }
-        Debug.Log($"Target: {currentTarget.name}");
         if (currentTarget != null)
         {
+            updateHighestPoint();
             for (int i = 0; i < archerTransforms.Count; i++)
             {
                 Transform archer = archerTransforms[i];

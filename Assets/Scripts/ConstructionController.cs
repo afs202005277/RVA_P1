@@ -8,6 +8,7 @@ public class ConstructionController : MonoBehaviour
     public GameObject towerPrefab;
     public GameObject wallPrefab;
     private GameObject current = null;
+    private bool tryingToBuild = false;
 
     private void Update()
     {
@@ -25,6 +26,7 @@ public class ConstructionController : MonoBehaviour
         Debug.Log("Found Tower");
         if (current == null)
         {
+            tryingToBuild = true;
             StartCoroutine(CheckIfCanPlaceDefense(towerPrefab, gameManager.CurrentDifficultySettings.TowerCost));
         }
         else
@@ -35,6 +37,7 @@ public class ConstructionController : MonoBehaviour
 
     public void onTargetLost()
     {
+        tryingToBuild=false;
         Debug.Log("Lost Tower");
         if (current != null)
         {
@@ -46,6 +49,7 @@ public class ConstructionController : MonoBehaviour
     {
         if (current == null)
         {
+            tryingToBuild = true;
             StartCoroutine(CheckIfCanPlaceDefense(wallPrefab, gameManager.CurrentDifficultySettings.WallCost));
         }
         else
@@ -56,7 +60,7 @@ public class ConstructionController : MonoBehaviour
 
     IEnumerator CheckIfCanPlaceDefense(GameObject prefab, float cost)
     {
-        while (true)
+        while (tryingToBuild)
         {
             if (!gameManager.canPlaceDefense())
             {
@@ -68,11 +72,12 @@ public class ConstructionController : MonoBehaviour
                 GameObject defense = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, 0));
                 defense.transform.SetParent(transform);
                 defense.layer = LayerMask.NameToLayer("Defenses");
-                defense.GetComponent<TowerController>().gameManager = gameManager;
+                defense.GetComponent<DefensiveStructure>().gameManager = gameManager;
                 current = defense;
                 gameManager.addDefense(defense);
                 gameManager.updateMoney(-cost, true);
                 Debug.Log($"Placed Tower on position: {transform.position.x}, {transform.position.y}, {transform.position.z}. Name: {gameObject.name}");
+                tryingToBuild = false;
                 yield break;
             }
             else

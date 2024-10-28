@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
     public DifficultyConfig difficultyConfig;
 
     public int maxDefenses;
-    private int initialDefenses;
 
     public GameObject currentCastle;
 
@@ -51,16 +50,6 @@ public class GameManager : MonoBehaviour
         setGameWeather();
 
         currentDifficultySettings = difficultyConfig.GetSettings(PlayerPrefs.GetInt("difficulty", 1));
-
-        GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
-        foreach (GameObject obj in allGameObjects)
-        {
-            if (obj.layer == LayerMask.NameToLayer("Defenses"))
-            {
-                defenses.Add(obj);
-            }
-            initialDefenses = defenses.Count;
-        }
     }
 
     public void setGameWeather()
@@ -142,7 +131,7 @@ public class GameManager : MonoBehaviour
 
     public bool canPlaceDefense()
     {
-        return defenses.Count < maxDefenses + initialDefenses;
+        return defenses.Count < maxDefenses + 1;
     }
 
     public void RestartGame()
