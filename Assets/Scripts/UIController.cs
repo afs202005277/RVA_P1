@@ -22,13 +22,21 @@ public class UIController : MonoBehaviour
 
     public TextMeshProUGUI moneytext;
 
-    public String notEnoughMoneyMessage; // = "Not enough money!"
+    public String notEnoughMoneyMessage;
     public String maxDefensesReachedMessage;
+    public String maxBaseLevelReachedMessage;
 
     public void notEnoughMoney()
     {
         TextMeshProUGUI text = warningsCanvas.GetComponentInChildren<TextMeshProUGUI>();
         text.text = notEnoughMoneyMessage;
+        StartCoroutine(FadeInAndOut(warningsCanvas, 0.5f));
+    }
+
+    public void maxCastleLevel()
+    {
+        TextMeshProUGUI text = warningsCanvas.GetComponentInChildren<TextMeshProUGUI>();
+        text.text = maxBaseLevelReachedMessage;
         StartCoroutine(FadeInAndOut(warningsCanvas, 0.5f));
     }
 

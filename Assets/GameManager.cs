@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     private float currentMoney = 0;
     
     public int currentRound = 1;
+    private bool waitingForRound = false;
 
     private int monstersKilled = 0;
     public int monsterPerRound;
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
         if (WeatherServiceEnabled)
         {
             StartCoroutine(Init());
@@ -75,7 +77,7 @@ public class GameManager : MonoBehaviour
     public void killMonster()
     {
         monstersKilled++;
-        if ( monstersKilled == monsterPerRound)
+        if ( monstersKilled == getNumMonstersRound())
         {
             roundEnded();
         }
@@ -83,8 +85,13 @@ public class GameManager : MonoBehaviour
 
     public void roundEnded()
     {
-        Debug.Log("AFSDEBUGGING: Round ended");
-        uIController.roundEnded(() => currentRound++, currentRound);
+        monstersKilled = 0;
+        waitingForRound = true;
+        uIController.roundEnded(() =>
+        {
+            currentRound++;
+            waitingForRound = false;
+        }, currentRound);
     }
 
     IEnumerator Init()
@@ -99,7 +106,6 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(defenses.Count);
         updateMoney(currentDifficultySettings.PassiveMoneyEarned * Time.deltaTime, false);
     }
 
@@ -142,5 +148,10 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public bool isWaiting()
+    {
+        return waitingForRound;
     }
 }

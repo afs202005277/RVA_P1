@@ -52,6 +52,7 @@ public class BaseUpgrader : MonoBehaviour
             else
             {
                 Debug.LogWarning("AFSDEBUGGING: No castle to upgrade to, or all castles are upgraded.");
+                gameManager.uIController.maxCastleLevel();
             }
         }
         else

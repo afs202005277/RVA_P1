@@ -21,6 +21,7 @@ public class BaseBuilder : MonoBehaviour
         castlePlaceholder.transform.position = transform.position;
         gameManager.currentCastle.SetActive(true);
         gameManager.currentCastle.transform.SetParent(castlePlaceholder.transform);
+        Debug.Log($"Placed castle on position: {gameManager.currentCastle.transform.position.x}, {gameManager.currentCastle.transform.position.y}, {gameManager.currentCastle.transform.position.z}");
     }
 
 }

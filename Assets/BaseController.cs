@@ -20,7 +20,7 @@ public class BaseController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-
+        Debug.Log($"Base health: {health}");
         if (health <= 0)
         {
             DestroyObject();
@@ -58,5 +58,6 @@ public class BaseController : MonoBehaviour
     {
         gameOverScreen.transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>().text = $"YOU SURVIDED {GameObject.Find("GameManager").GetComponent<GameManager>().currentRound} ROUNDS";
         gameOverScreen.SetActive(true);
+        Time.timeScale = 0f; // pause the game
     }
 }

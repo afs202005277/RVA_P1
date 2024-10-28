@@ -44,7 +44,7 @@ public class MonsterSpawner : MonoBehaviour
             enemyCount = 0;
         }
         // Check if it's time to spawn a new zombie
-        if (Time.time >= nextSpawnTime && enemyCount < maxEnemies && gameManager.defenses.Count > 0)
+        if (Time.time >= nextSpawnTime && enemyCount < maxEnemies && gameManager.defenses.Count > 0 && !gameManager.isWaiting())
         {
             SpawnMonster();
             nextSpawnTime = Time.time + spawnRate;  // Set the next spawn time
