@@ -10938,6 +10938,7 @@ MonoBehaviour:
   buildingPrefab: {fileID: 0}
   leftOversPrefab: {fileID: 0}
   health: 20
+  maxHealth: 0
   attackRange: 25
   attackDamage: 10
   attackCooldown: 5
@@ -11836,6 +11837,7 @@ MonoBehaviour:
   buildingPrefab: {fileID: 0}
   leftOversPrefab: {fileID: 0}
   health: 20
+  maxHealth: 0
   attackRange: 25
   attackDamage: 10
   attackCooldown: 5
@@ -11886,6 +11888,7 @@ MonoBehaviour:
   rainParticles: {fileID: 1394433622}
   uIController: {fileID: 1278329163}
   defenses: []
+  destroyedDefenses: []
   monsterPrefabs:
   - {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   - {fileID: 6697294229898335401, guid: 7dc7b54399d54194e9f2619f1832e8d5, type: 3}

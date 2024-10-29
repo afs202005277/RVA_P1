@@ -24,8 +24,9 @@ public class GameManager : MonoBehaviour
 
     private DifficultySettings currentDifficultySettings;
     public List<GameObject> defenses;
+    public List<GameObject> destroyedDefenses;
     public List<GameObject> monsterPrefabs;
-    private float currentMoney = 2000;
+    private float currentMoney = 100;
     
     public int currentRound = 1;
     private bool waitingForRound = false;
@@ -42,16 +43,16 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        if (PlayerPrefs.GetInt("isAuto", 0) == 1)
+        /*if (PlayerPrefs.GetInt("isAuto", 0) == 1 && WeatherServiceEnabled)
         {
             StartCoroutine(Init());
         }
         else
-        {
-            isNight = PlayerPrefs.GetInt("isNight", 0) == 1;
-            isRaining = PlayerPrefs.GetInt("isRain", 0) == 1;
-            isHot = PlayerPrefs.GetInt("isHot", 0) == 1;
-        }
+        {*/
+        isNight = PlayerPrefs.GetInt("isNight", 0) == 1;
+        isRaining = PlayerPrefs.GetInt("isRain", 0) == 1;
+        isHot = PlayerPrefs.GetInt("isHot", 0) == 1;
+        //}
 
         setGameWeather();
 
@@ -87,6 +88,14 @@ public class GameManager : MonoBehaviour
             currentRound++;
             waitingForRound = false;
         }, currentRound);
+        currentCastle.GetComponent<BaseController>().health = currentCastle.GetComponent<BaseController>().maxHealth;
+        destroyedDefenses.ForEach(defense => defense.GetComponent<DefensiveStructure>().health = defense.GetComponent<DefensiveStructure>().maxHealth);
+        defenses.ForEach(defense => {
+            if (defense.GetComponent<DefensiveStructure>())
+                defense.GetComponent<DefensiveStructure>().health = defense.GetComponent<DefensiveStructure>().maxHealth;
+            });
+        destroyedDefenses.ForEach(defenses => defenses.GetComponent<DefensiveStructure>().repair());
+        destroyedDefenses.Clear();
     }
 
     IEnumerator Init()
@@ -148,5 +157,10 @@ public class GameManager : MonoBehaviour
     public bool isWaiting()
     {
         return waitingForRound;
+    }
+
+    public void DestroyDefense(GameObject defense)
+    {
+        destroyedDefenses.Add(defense);
     }
 }

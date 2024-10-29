@@ -16,6 +16,7 @@ public abstract class DefensiveStructure : MonoBehaviour
 
     [Header("Defensive Stats")]
     public float health;
+    public float maxHealth = 20f;
 
     [Header("Attack Stats")]
     public float attackRange;
@@ -118,6 +119,7 @@ public abstract class DefensiveStructure : MonoBehaviour
     protected virtual void DestroyObject()
     {
         gameManager.RemoveDefense(gameObject);
+        gameManager.DestroyDefense(gameObject);
         gameObject.layer = LayerMask.NameToLayer("Default");
         explosionPrefab.SetActive(true);
         buildingPrefab.SetActive(false);
@@ -126,6 +128,20 @@ public abstract class DefensiveStructure : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             collider.enabled = false;
+        }
+    }
+
+    public void repair()
+    {
+        gameManager.AddDefense(gameObject);
+        gameObject.layer = LayerMask.NameToLayer("Defenses");
+        explosionPrefab.SetActive(false);
+        buildingPrefab.SetActive(true);
+        leftOversPrefab.SetActive(false);
+        Collider[] colliders = gameObject.GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = true;
         }
     }
 

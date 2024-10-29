@@ -6,6 +6,7 @@ using UnityEngine;
 public class BaseController : MonoBehaviour
 {
     public float health;
+    public float maxHealth = 20f;
 
     public GameObject gameOverScreen;
     private float _burnTimer = 0f;
