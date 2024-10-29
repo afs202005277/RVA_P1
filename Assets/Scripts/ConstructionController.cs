@@ -12,7 +12,6 @@ public class ConstructionController : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"TowerPos:{transform.position.y}");
         if (current != null)
         {
             Vector3 currentPos = current.transform.position;
@@ -23,7 +22,6 @@ public class ConstructionController : MonoBehaviour
 
     public void onTowerFound()
     {
-        Debug.Log("Found Tower");
         if (current == null)
         {
             tryingToBuild = true;
@@ -38,7 +36,6 @@ public class ConstructionController : MonoBehaviour
     public void onTargetLost()
     {
         tryingToBuild=false;
-        Debug.Log("Lost Tower");
         if (current != null)
         {
             current.SetActive(false);
@@ -65,7 +62,6 @@ public class ConstructionController : MonoBehaviour
             if (!gameManager.canPlaceDefense())
             {
                 gameManager.uIController.maxDefensesReached();
-                Debug.Log("AFSDEBUGGING: Maximum number of defenses reached.");
             }
             else if (gameManager.getCurrentMoney() >= cost)
             {
@@ -76,14 +72,12 @@ public class ConstructionController : MonoBehaviour
                 current = defense;
                 gameManager.addDefense(defense);
                 gameManager.updateMoney(-cost, true);
-                Debug.Log($"Placed Tower on position: {transform.position.x}, {transform.position.y}, {transform.position.z}. Name: {gameObject.name}");
                 tryingToBuild = false;
                 yield break;
             }
             else
             {
                 gameManager.uIController.notEnoughMoney();
-                Debug.Log("AFSDEBUGGING: Not enough money to instantiate tower.");
             }
 
             yield return new WaitForSeconds(0.5f);

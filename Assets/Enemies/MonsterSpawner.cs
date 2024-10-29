@@ -108,7 +108,6 @@ public class MonsterSpawner : MonoBehaviour
 
         if (monsterIndex != _nightMonster)
             monster.layer = layerMask;
-        Debug.Log($"LAYER: {LayerMask.LayerToName(monster.layer)}");
         MonsterController script = monster.GetComponent<MonsterController>();
         script.gameManager = gameManager;
         script.applyDifficultySettings(gameManager.CurrentDifficultySettings.MonsterSettings[monsterPrefab.name]);

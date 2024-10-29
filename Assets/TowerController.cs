@@ -96,7 +96,6 @@ public class TowerController : DefensiveStructure
             BallController cannonballScript = cannonball.GetComponent<BallController>();
             cannonballScript.damage = attackDamage;
 
-            Debug.Log($"BallMov: I am tower {gameObject.name} at position {transform.position} and spawned a ball at position {cannonball.transform.position}");
             if (cannonballScript != null)
             {
                 cannonballScript.SetTarget(currentTarget);

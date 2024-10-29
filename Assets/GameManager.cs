@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     private DifficultySettings currentDifficultySettings;
     public List<GameObject> defenses;
     public List<GameObject> monsterPrefabs;
-    private float currentMoney = 0;
+    private float currentMoney = 2000;
     
     public int currentRound = 1;
     private bool waitingForRound = false;

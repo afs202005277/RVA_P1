@@ -20,7 +20,6 @@ public class BaseController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        Debug.Log($"Base health: {health}");
         if (health <= 0)
         {
             DestroyObject();

@@ -15,8 +15,6 @@ public class ArrowController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Arrow Created");
-        Debug.Log($"Arrow pos: {transform.position.x}, {transform.position.y}, {transform.position.z}");
         rb = GetComponent<Rigidbody>();
         LaunchArrow();
     }
@@ -69,31 +67,20 @@ public class ArrowController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("AFSDEBUGGING: No valid trajectory found!");
+            Debug.LogWarning("ArrowController: No valid trajectory found!");
         }
     }
 
     Vector3 CalculateLaunchVelocity()
     {
-        //Vector3 velocity = headPosition / (float)(Math.Sqrt(-2 * (transform.position.y - target.transform.position.y) / Physics.gravity.y)) - target.transform.forward * targetScript.speed;
-        // Gravity acceleration
         float g = Physics.gravity.y;
 
         Vector3 archerPosition = transform.position;
         Vector3 monsterHeadPosition = center;
 
-        Debug.Log($"Monster pos: {monsterHeadPosition.x}, {monsterHeadPosition.y}, {monsterHeadPosition.z}");
-        Debug.Log($"Archer pos: {archerPosition.x}, {archerPosition.y}, {archerPosition.z}");
-        //monsterPos.y = 0;
-        //Vector3 monsterHeadPosition = monsterPos + Vector3.up * headPosition.y;
-
         float heightDifference = (monsterHeadPosition.y - archerPosition.y);
 
-        // Time to hit the monster's head based on vertical motion
-        // t = sqrt(2 * heightDifference / g)
         float time = Mathf.Sqrt(2 * heightDifference / g);
-
-        Debug.Log($"Time: {time}");
 
         float vy = heightDifference / time;
 
@@ -107,13 +94,10 @@ public class ArrowController : MonoBehaviour
 
         time = horizontalDistance / horizontalVelocity.magnitude;
 
-        // Compute the required vertical velocity (Vy)
-        // Vy = (y_displacement + 0.5 * g * t^2) / t
         vy = (heightDifference - 0.5f * g * Mathf.Pow(time, 2)) / time;
 
         velocity = horizontalVelocity + new Vector3(0, vy, 0);
 
-        Debug.Log($"Arrow velocity: {velocity.x}, {velocity.y}, {velocity.z}");
         velocity.y = velocity.y / 6;
         return velocity;
     }
@@ -124,7 +108,6 @@ public class ArrowController : MonoBehaviour
         Stick();
         if (LayerMask.LayerToName(collision.gameObject.layer) == "Monsters")
         {
-            // Logic when the arrow hits the monster
             StickToMonster(target);
         }
         if (collision.gameObject.CompareTag("Terrain"))

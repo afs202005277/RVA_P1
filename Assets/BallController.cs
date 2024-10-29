@@ -19,7 +19,6 @@ public class BallController : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Cannon ball created");
         layerMask = LayerMask.NameToLayer("Monsters");
     }
 
@@ -45,15 +44,12 @@ public class BallController : MonoBehaviour
         {
             transform.position += direction * speed * Time.deltaTime;
         }
-        Debug.Log($"BallMov: Cannon ball Update Position: {transform.position.x}, {transform.position.y}, {transform.position.z}");
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.layer == layerMask)
         {
-            Debug.Log("Cannon ball destroyed");
-            // Destroy the cannonball
             collision.gameObject.GetComponent<MonsterController>().TakeDamage(damage);
             Destroy(gameObject);
         }
