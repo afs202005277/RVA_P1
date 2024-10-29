@@ -42,9 +42,15 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1f;
-        if (WeatherServiceEnabled)
+        if (PlayerPrefs.GetInt("isAuto", 0) == 1)
         {
             StartCoroutine(Init());
+        }
+        else
+        {
+            isNight = PlayerPrefs.GetInt("isNight", 0) == 1;
+            isRaining = PlayerPrefs.GetInt("isRain", 0) == 1;
+            isHot = PlayerPrefs.GetInt("isHot", 0) == 1;
         }
 
         setGameWeather();
