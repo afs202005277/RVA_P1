@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
-    <ImageTarget name="wall_scifi_3" size="1.000000 0.560538" />
-    <ImageTarget name="wall_scifi_2" size="1.000000 0.560538" />
-    <ImageTarget name="wall_scifi_1" size="1.000000 0.560538" />
-    <ImageTarget name="wall_medieval_3" size="1.000000 1.500697" />
-    <ImageTarget name="wall_medieval_2" size="1.000000 1.500697" />
-    <ImageTarget name="wall_medieval_1" size="1.000000 1.500697" />
+    <ImageTarget name="wall_scifi_3" size="1.000000 1.000000" />
+    <ImageTarget name="wall_scifi_2" size="1.000000 0.540136" />
+    <ImageTarget name="wall_scifi_1" size="1.000000 1.199400" />
+    <ImageTarget name="wall_medieval_3" size="1.000000 0.666667" />
+    <ImageTarget name="tower_medieval_2" size="1.000000 1.239640" />
+    <ImageTarget name="wall_medieval_2" size="1.000000 0.667000" />
+    <ImageTarget name="wall_medieval_1" size="1.000000 0.665434" />
     <ImageTarget name="tower_scifi_3" size="1.000000 1.000000" />
-    <ImageTarget name="tower_scifi_2" size="1.000000 1.000000" />
-    <ImageTarget name="tower_scifi_1" size="1.000000 1.000000" />
-    <ImageTarget name="tower_medieval_3" size="1.000000 1.503759" />
-    <ImageTarget name="tower_medieval_2" size="1.000000 1.503759" />
-    <ImageTarget name="tower_medieval_1" size="1.000000 1.503759" />
+    <ImageTarget name="tower_scifi_2" size="1.000000 0.562500" />
+    <ImageTarget name="tower_scifi_1" size="1.000000 0.562500" />
+    <ImageTarget name="tower_medieval_3" size="1.000000 0.666992" />
+    <ImageTarget name="tower_medieval_1" size="1.000000 0.750000" />
     <ImageTarget name="castle_scifi" size="1.000000 0.581923" />
     <ImageTarget name="wall_scifi" size="1.000000 0.560417" />
     <ImageTarget name="tower_scifi" size="1.000000 1.000000" />
