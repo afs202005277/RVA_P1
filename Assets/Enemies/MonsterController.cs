@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
-        speed /= 5f; // scale
+        speed /= 7f; // scale
         animator.SetBool("isWalking", true);
         cameraTransform = Camera.main.transform;
     }   
