@@ -17,6 +17,11 @@ public class ConstructionController : MonoBehaviour
             Vector3 currentPos = current.transform.position;
             currentPos.y = gameManager.currentCastle.transform.position.y;
             current.transform.position = currentPos;
+
+            Quaternion currentRot = current.transform.rotation;
+            currentRot.x = 0;
+            currentRot.z = 0;
+            current.transform.rotation = currentRot;
         }
     }
 
