@@ -242,14 +242,15 @@ MonoBehaviour:
   explosionPrefab: {fileID: 6529756810243015254}
   buildingPrefab: {fileID: 7151361115144458659}
   leftOversPrefab: {fileID: 1236159934442462791}
-  health: 100
-  attackRange: 30
-  attackDamage: 20
+  health: 20
+  maxHealth: 20
+  attackRange: 5
+  attackDamage: 10
   attackCooldown: 2
   monstersLayer:
     serializedVersion: 2
-    m_Bits: 0
-  projectilePrefab: {fileID: 0}
+    m_Bits: 64
+  projectilePrefab: {fileID: 5229879652020767373, guid: 0221646e64e22c245aff78b431ed31e5, type: 3}
 --- !u!1001 &1234887889823817859
 PrefabInstance:
   m_ObjectHideFlags: 0
