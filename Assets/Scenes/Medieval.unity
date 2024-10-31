@@ -9040,7 +9040,7 @@ Transform:
   m_GameObject: {fileID: 216645072}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.56, y: 0, z: -1.15}
+  m_LocalPosition: {x: 2.36, y: 0, z: -1.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9288,7 +9288,7 @@ Transform:
   m_GameObject: {fileID: 261096946}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.26, y: 0, z: 0.93}
+  m_LocalPosition: {x: -2.12, y: 0, z: 0.93}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10028,7 +10028,19 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 799884130}
+        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
+        m_MethodName: onTargetLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &799884132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10065,7 +10077,7 @@ Transform:
   m_GameObject: {fileID: 799884128}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.03, y: 0, z: 1.91}
+  m_LocalPosition: {x: -0.55, y: 0, z: 1.53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10204,7 +10216,7 @@ Transform:
   m_GameObject: {fileID: 802423943}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7045845, y: -0.059671868, z: -0.059671875, w: 0.7045845}
-  m_LocalPosition: {x: 0.2, y: 7, z: 0}
+  m_LocalPosition: {x: 0.2, y: 20, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10615,7 +10627,19 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 951686565}
+        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
+        m_MethodName: onTargetLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &951686567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10652,7 +10676,7 @@ Transform:
   m_GameObject: {fileID: 951686563}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.26, y: 0, z: -1.11}
+  m_LocalPosition: {x: -2.4, y: 0, z: -1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10914,6 +10938,7 @@ MonoBehaviour:
   buildingPrefab: {fileID: 0}
   leftOversPrefab: {fileID: 0}
   health: 20
+  maxHealth: 0
   attackRange: 25
   attackDamage: 10
   attackCooldown: 5
@@ -11764,7 +11789,7 @@ Transform:
   m_GameObject: {fileID: 1234852206}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.7, y: 0, z: -2.35}
+  m_LocalPosition: {x: -0.7, y: 0, z: -2.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11812,6 +11837,7 @@ MonoBehaviour:
   buildingPrefab: {fileID: 0}
   leftOversPrefab: {fileID: 0}
   health: 20
+  maxHealth: 0
   attackRange: 25
   attackDamage: 10
   attackCooldown: 5
@@ -11862,6 +11888,7 @@ MonoBehaviour:
   rainParticles: {fileID: 1394433622}
   uIController: {fileID: 1278329163}
   defenses: []
+  destroyedDefenses: []
   monsterPrefabs:
   - {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
   - {fileID: 6697294229898335401, guid: 7dc7b54399d54194e9f2619f1832e8d5, type: 3}
@@ -11872,7 +11899,7 @@ MonoBehaviour:
   currentRound: 1
   monsterPerRound: 1
   difficultyConfig: {}
-  maxDefenses: 4
+  maxDefenses: 2
   currentCastle: {fileID: 0}
 --- !u!4 &1278329160
 Transform:
@@ -17012,7 +17039,19 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1462756784}
+        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
+        m_MethodName: onTargetLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1462756786
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17049,7 +17088,7 @@ Transform:
   m_GameObject: {fileID: 1462756782}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.39, y: 0, z: 1.05}
+  m_LocalPosition: {x: 2.33, y: 0, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17474,7 +17513,7 @@ Transform:
   m_GameObject: {fileID: 1630586726}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.08, y: 0, z: 1.97}
+  m_LocalPosition: {x: 1.08, y: 0, z: 1.65}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18335,7 +18374,19 @@ MonoBehaviour:
         m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2038018993}
+        m_TargetAssemblyTypeName: ConstructionController, Assembly-CSharp
+        m_MethodName: onTargetLost
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2038018995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18372,7 +18423,7 @@ Transform:
   m_GameObject: {fileID: 2038018991}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.75, y: 0, z: -2.26}
+  m_LocalPosition: {x: 0.75, y: 0, z: -2.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

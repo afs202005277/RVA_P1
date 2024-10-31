@@ -6,6 +6,7 @@ using UnityEngine;
 public class BaseController : MonoBehaviour
 {
     public float health;
+    public float maxHealth = 20f;
 
     public GameObject gameOverScreen;
     private float _burnTimer = 0f;
@@ -20,7 +21,6 @@ public class BaseController : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        Debug.Log($"Base health: {health}");
         if (health <= 0)
         {
             DestroyObject();

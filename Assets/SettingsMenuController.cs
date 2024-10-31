@@ -18,6 +18,11 @@ public class SettingsMenuController : MonoBehaviour
     public void confirm()
     {
         PlayerPrefs.SetInt("difficulty", transform.Find("Difficulty").GetComponent<DifficultyController>().getCurrentDifficulty());
+
+        PlayerPrefs.SetInt("isAuto", transform.Find("Toggles").GetComponent<ToggleController>().getAuto() ? 1 : 0);
+        PlayerPrefs.SetInt("isNight", transform.Find("Toggles").GetComponent<ToggleController>().getNight() ? 1 : 0);
+        PlayerPrefs.SetInt("isRain", transform.Find("Toggles").GetComponent<ToggleController>().getRain() ? 1 : 0);
+        PlayerPrefs.SetInt("isHot", transform.Find("Toggles").GetComponent<ToggleController>().getHot() ? 1 : 0);
         PlayerPrefs.Save();
 
         Transform themeTransform = transform.Find("Theme");

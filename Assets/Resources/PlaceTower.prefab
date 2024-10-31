@@ -68,6 +68,58 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlaceTower
       objectReference: {fileID: 0}
+    - target: {fileID: 5628384621259588288, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628384621259588288, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5628384621259588288, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 8116655830389375184, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118194646570747342, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118194646570747342, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 12.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118194646570747342, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 12.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8118194646570747342, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8716314792910615332, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717608105502650042, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717608105502650042, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8717608105502650042, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8863523249166634452, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5976852188119511695, guid: f1153456fe030114480dcb1a93f6ac86, type: 3}
     m_RemovedGameObjects: []
@@ -119,11 +171,12 @@ MonoBehaviour:
   explosionPrefab: {fileID: 1189918925923773231}
   buildingPrefab: {fileID: 2720767771928907989}
   leftOversPrefab: {fileID: 1956489557637293611}
-  health: 100
-  attackRange: 30
-  attackDamage: 20
-  attackCooldown: 2
+  health: 20
+  maxHealth: 20
+  attackRange: 5
+  attackDamage: 10
+  attackCooldown: 5
   monstersLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   projectilePrefab: {fileID: 8300271018335448625, guid: d331a1d9e8fe310469104caf93c99152, type: 3}

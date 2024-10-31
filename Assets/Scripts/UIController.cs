@@ -49,7 +49,6 @@ public class UIController : MonoBehaviour
 
     public void roundEnded(Action onBlinkCompleteCallback, int currentRound)
     {
-        Debug.Log("AFSDEBUGGING: Round ended");
         StartCoroutine(BlinkRoundIndicator(blinkDuration, blinkCount, onBlinkCompleteCallback, currentRound));
     }
 

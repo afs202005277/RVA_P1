@@ -16,6 +16,7 @@ public abstract class DefensiveStructure : MonoBehaviour
 
     [Header("Defensive Stats")]
     public float health;
+    public float maxHealth = 20f;
 
     [Header("Attack Stats")]
     public float attackRange;
@@ -34,18 +35,15 @@ public abstract class DefensiveStructure : MonoBehaviour
     protected bool _burning = false;
     protected bool _burnCool = false;
 
+    private Collider collider;
+
     void Start()
     {
         Initialize();
-        gameManager.addDefense(gameObject);
     }
 
-    protected void Initialize()
+    protected void updateHighestPoint()
     {
-        monstersLayer = LayerMask.GetMask("Monsters");
-
-        Collider collider = gameObject.GetComponent<Collider>();
-
         if (collider != null)
         {
             Bounds bounds = collider.bounds;
@@ -53,8 +51,15 @@ public abstract class DefensiveStructure : MonoBehaviour
         }
         else
         {
-            //Debug.LogError("Collider not found on the tower.");
+            Debug.LogError("Collider not found on the tower.");
         }
+    }
+
+    protected void Initialize()
+    {
+        collider = gameObject.GetComponent<Collider>();
+        monstersLayer = LayerMask.GetMask("Monsters");
+        updateHighestPoint();
     }
 
     public abstract void TakeDamage(float damage);
@@ -114,6 +119,7 @@ public abstract class DefensiveStructure : MonoBehaviour
     protected virtual void DestroyObject()
     {
         gameManager.RemoveDefense(gameObject);
+        gameManager.DestroyDefense(gameObject);
         gameObject.layer = LayerMask.NameToLayer("Default");
         explosionPrefab.SetActive(true);
         buildingPrefab.SetActive(false);
@@ -122,6 +128,20 @@ public abstract class DefensiveStructure : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             collider.enabled = false;
+        }
+    }
+
+    public void repair()
+    {
+        gameManager.AddDefense(gameObject);
+        gameObject.layer = LayerMask.NameToLayer("Defenses");
+        explosionPrefab.SetActive(false);
+        buildingPrefab.SetActive(true);
+        leftOversPrefab.SetActive(false);
+        Collider[] colliders = gameObject.GetComponentsInChildren<Collider>();
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = true;
         }
     }
 

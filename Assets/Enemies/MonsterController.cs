@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour
 
     void Start()
     {
-        speed /= 5f; // scale
+        speed /= 7f; // scale
         animator.SetBool("isWalking", true);
         cameraTransform = Camera.main.transform;
     }   
@@ -53,7 +53,7 @@ public class MonsterController : MonoBehaviour
 
         Vector3 increment = speed * Time.deltaTime * direction;
 
-        if (animator.GetBool("isWalking"))
+        if (animator.GetBool("isWalking") && !animator.GetBool("died"))
         {
             transform.position += increment;
             Quaternion lookRotation = Quaternion.LookRotation(direction);

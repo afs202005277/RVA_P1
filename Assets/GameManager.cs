@@ -24,8 +24,9 @@ public class GameManager : MonoBehaviour
 
     private DifficultySettings currentDifficultySettings;
     public List<GameObject> defenses;
+    public List<GameObject> destroyedDefenses;
     public List<GameObject> monsterPrefabs;
-    private float currentMoney = 0;
+    private float currentMoney = 100;
     
     public int currentRound = 1;
     private bool waitingForRound = false;
@@ -36,31 +37,26 @@ public class GameManager : MonoBehaviour
     public DifficultyConfig difficultyConfig;
 
     public int maxDefenses;
-    private int initialDefenses;
 
     public GameObject currentCastle;
 
     void Start()
     {
         Time.timeScale = 1f;
-        if (WeatherServiceEnabled)
+        /*if (PlayerPrefs.GetInt("isAuto", 0) == 1 && WeatherServiceEnabled)
         {
             StartCoroutine(Init());
         }
+        else
+        {*/
+        isNight = PlayerPrefs.GetInt("isNight", 0) == 1;
+        isRaining = PlayerPrefs.GetInt("isRain", 0) == 1;
+        isHot = PlayerPrefs.GetInt("isHot", 0) == 1;
+        //}
 
         setGameWeather();
 
         currentDifficultySettings = difficultyConfig.GetSettings(PlayerPrefs.GetInt("difficulty", 1));
-
-        GameObject[] allGameObjects = FindObjectsOfType<GameObject>();
-        foreach (GameObject obj in allGameObjects)
-        {
-            if (obj.layer == LayerMask.NameToLayer("Defenses"))
-            {
-                defenses.Add(obj);
-            }
-            initialDefenses = defenses.Count;
-        }
     }
 
     public void setGameWeather()
@@ -92,6 +88,14 @@ public class GameManager : MonoBehaviour
             currentRound++;
             waitingForRound = false;
         }, currentRound);
+        currentCastle.GetComponent<BaseController>().health = currentCastle.GetComponent<BaseController>().maxHealth;
+        destroyedDefenses.ForEach(defense => defense.GetComponent<DefensiveStructure>().health = defense.GetComponent<DefensiveStructure>().maxHealth);
+        defenses.ForEach(defense => {
+            if (defense.GetComponent<DefensiveStructure>())
+                defense.GetComponent<DefensiveStructure>().health = defense.GetComponent<DefensiveStructure>().maxHealth;
+            });
+        destroyedDefenses.ForEach(defenses => defenses.GetComponent<DefensiveStructure>().repair());
+        destroyedDefenses.Clear();
     }
 
     IEnumerator Init()
@@ -142,7 +146,7 @@ public class GameManager : MonoBehaviour
 
     public bool canPlaceDefense()
     {
-        return defenses.Count < maxDefenses + initialDefenses;
+        return defenses.Count < maxDefenses + 1;
     }
 
     public void RestartGame()
@@ -153,5 +157,10 @@ public class GameManager : MonoBehaviour
     public bool isWaiting()
     {
         return waitingForRound;
+    }
+
+    public void DestroyDefense(GameObject defense)
+    {
+        destroyedDefenses.Add(defense);
     }
 }

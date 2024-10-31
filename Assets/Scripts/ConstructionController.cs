@@ -8,23 +8,28 @@ public class ConstructionController : MonoBehaviour
     public GameObject towerPrefab;
     public GameObject wallPrefab;
     private GameObject current = null;
+    private bool tryingToBuild = false;
 
     private void Update()
     {
-        Debug.Log($"TowerPos:{transform.position.y}");
         if (current != null)
         {
             Vector3 currentPos = current.transform.position;
             currentPos.y = gameManager.currentCastle.transform.position.y;
             current.transform.position = currentPos;
+
+            Quaternion currentRot = current.transform.rotation;
+            currentRot.x = 0;
+            currentRot.z = 0;
+            current.transform.rotation = currentRot;
         }
     }
 
     public void onTowerFound()
     {
-        Debug.Log("Found Tower");
         if (current == null)
         {
+            tryingToBuild = true;
             StartCoroutine(CheckIfCanPlaceDefense(towerPrefab, gameManager.CurrentDifficultySettings.TowerCost));
         }
         else
@@ -35,7 +40,7 @@ public class ConstructionController : MonoBehaviour
 
     public void onTargetLost()
     {
-        Debug.Log("Lost Tower");
+        tryingToBuild=false;
         if (current != null)
         {
             current.SetActive(false);
@@ -46,6 +51,7 @@ public class ConstructionController : MonoBehaviour
     {
         if (current == null)
         {
+            tryingToBuild = true;
             StartCoroutine(CheckIfCanPlaceDefense(wallPrefab, gameManager.CurrentDifficultySettings.WallCost));
         }
         else
@@ -56,29 +62,27 @@ public class ConstructionController : MonoBehaviour
 
     IEnumerator CheckIfCanPlaceDefense(GameObject prefab, float cost)
     {
-        while (true)
+        while (tryingToBuild)
         {
             if (!gameManager.canPlaceDefense())
             {
                 gameManager.uIController.maxDefensesReached();
-                Debug.Log("AFSDEBUGGING: Maximum number of defenses reached.");
             }
             else if (gameManager.getCurrentMoney() >= cost)
             {
                 GameObject defense = Instantiate(prefab, transform.position, Quaternion.Euler(0, 0, 0));
                 defense.transform.SetParent(transform);
                 defense.layer = LayerMask.NameToLayer("Defenses");
-                defense.GetComponent<TowerController>().gameManager = gameManager;
+                defense.GetComponent<DefensiveStructure>().gameManager = gameManager;
                 current = defense;
                 gameManager.addDefense(defense);
                 gameManager.updateMoney(-cost, true);
-                Debug.Log($"Placed Tower on position: {transform.position.x}, {transform.position.y}, {transform.position.z}. Name: {gameObject.name}");
+                tryingToBuild = false;
                 yield break;
             }
             else
             {
                 gameManager.uIController.notEnoughMoney();
-                Debug.Log("AFSDEBUGGING: Not enough money to instantiate tower.");
             }
 
             yield return new WaitForSeconds(0.5f);

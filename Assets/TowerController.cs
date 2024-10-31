@@ -91,10 +91,11 @@ public class TowerController : DefensiveStructure
             {
                 projectilePrefab = Resources.Load<GameObject>("SpikyBall");
             }
-
+            updateHighestPoint();
             GameObject cannonball = Instantiate(projectilePrefab, highestPoint, transform.rotation);
             BallController cannonballScript = cannonball.GetComponent<BallController>();
             cannonballScript.damage = attackDamage;
+
             if (cannonballScript != null)
             {
                 cannonballScript.SetTarget(currentTarget);

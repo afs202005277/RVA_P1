@@ -31,7 +31,7 @@ public class DifficultyConfig
             { "Chomper", new MonsterSettings(1.0f, 1.0f, 1.0f, 55f) },
             { "Spitter", new MonsterSettings(1.0f, 1.0f, 1.0f, 30f) }
         },
-        100.0f, // Passive money earned for Medium
+        1.0f, // Passive money earned for Medium
         120.0f, // cost of wall
         170.0f // cost of tower
     );

@@ -191,9 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3074657719734828472}
   gameManager: {fileID: 0}
-  health: 5
+  health: 4
   speed: 3
-  damage: 5
+  damage: 4
   stunTime: 1
   burnTime: 2
   coinPopupPrefab: {fileID: 0}
@@ -231,7 +231,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3074657719725428346}
   serializedVersion: 4
-  m_Mass: 2
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -248,7 +248,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &3074657719734828472 stripped
 Animator:

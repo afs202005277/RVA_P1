@@ -129,9 +129,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8268811963590475468}
   gameManager: {fileID: 0}
-  health: 7
+  health: 6
   speed: 4
-  damage: 7
+  damage: 5
   stunTime: 1
   burnTime: 1
   coinPopupPrefab: {fileID: 0}
@@ -186,5 +186,5 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 112
   m_CollisionDetection: 0
