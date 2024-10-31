@@ -433,9 +433,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 552905201943734288, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 552905201943734288, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 552905201943734288, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 552905201943734288, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 559233260898720330, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -905,9 +917,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1910529865880491184, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910529865880491184, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 1910529865880491184, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910529865880491184, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1910529865880491184, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1945019389960090145, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -1593,9 +1621,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3745101283575348623, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745101283575348623, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 3745101283575348623, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745101283575348623, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3756623681336980359, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -2369,9 +2409,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6159351147406854639, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159351147406854639, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 6159351147406854639, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6159351147406854639, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 6163148163647579206, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -3277,9 +3329,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8589717061832585284, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589717061832585284, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 8589717061832585284, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8589717061832585284, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8590908559751841867, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -3561,9 +3625,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9188987993559717129, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188987993559717129, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 9188987993559717129, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9188987993559717129, guid: c23b313348a513f429e629483c2b9af5, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 9205442701684995380, guid: c23b313348a513f429e629483c2b9af5, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -4855,9 +4931,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1710820034156566450, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710820034156566450, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 1710820034156566450, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710820034156566450, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 1724860539541578666, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -5179,9 +5267,21 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2238029585429459711, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238029585429459711, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 2238029585429459711, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2238029585429459711, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 2258973936042089592, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -6299,9 +6399,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4414006027874618196, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414006027874618196, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 4414006027874618196, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4414006027874618196, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 4414741957174806710, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -7587,9 +7699,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6612022999378624308, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612022999378624308, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 6612022999378624308, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612022999378624308, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 6616861276529997170, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -8291,9 +8415,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8041047936276146859, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041047936276146859, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 8041047936276146859, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8041047936276146859, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8054619567881102053, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -8423,9 +8559,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8266439505580791307, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266439505580791307, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 8266439505580791307, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackDamage
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266439505580791307, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8266439505580791307, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 8267950088046019998, guid: 227c299f64c83e841b93e5ff4bac283d, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -9441,7 +9593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 0}
@@ -10267,7 +10419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 0}
@@ -10359,9 +10511,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2734179447307809865, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734179447307809865, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 2734179447307809865, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2734179447307809865, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3446929973791759931, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.04
@@ -10419,9 +10583,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5208025231213777085, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208025231213777085, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 5208025231213777085, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208025231213777085, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5208025231213777085, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5579746381930986848, guid: c0b65a0a72e1be146bc31e85a8927b08, type: 3}
       propertyPath: m_Name
       value: Castle_L2
@@ -10939,12 +11119,12 @@ MonoBehaviour:
   leftOversPrefab: {fileID: 0}
   health: 20
   maxHealth: 0
-  attackRange: 25
-  attackDamage: 10
+  attackRange: 2
+  attackDamage: 1
   attackCooldown: 5
   monstersLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   projectilePrefab: {fileID: 4186913572433640243, guid: df61a9277f2706d4e9bf7dbc0bf01234, type: 3}
 --- !u!1001 &1063469122
 PrefabInstance:
@@ -11069,7 +11249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 0}
@@ -11280,7 +11460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4946321598002642969, guid: f2aacdd495b361648a3aac67baae8fae, type: 3}
       propertyPath: attackRange
-      value: 17
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4946321598002642969, guid: f2aacdd495b361648a3aac67baae8fae, type: 3}
       propertyPath: gameManager
@@ -11542,7 +11722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 452891657}
@@ -11838,12 +12018,12 @@ MonoBehaviour:
   leftOversPrefab: {fileID: 0}
   health: 20
   maxHealth: 0
-  attackRange: 25
-  attackDamage: 10
+  attackRange: 2
+  attackDamage: 1
   attackCooldown: 5
   monstersLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   projectilePrefab: {fileID: 4186913572433640243, guid: df61a9277f2706d4e9bf7dbc0bf01234, type: 3}
 --- !u!1 &1278329158
 GameObject:
@@ -17370,7 +17550,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 1278329159}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 0}
@@ -18473,17 +18653,45 @@ PrefabInstance:
       value: Castle
       objectReference: {fileID: 0}
     - target: {fileID: 3199997392709407596, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199997392709407596, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 3199997392709407596, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackDamage
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199997392709407596, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3199997392709407596, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 3254769851121796461, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4746778951403091864, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746778951403091864, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 4746778951403091864, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746778951403091864, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 5475189100692315626, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.04
@@ -18541,9 +18749,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7174609530206981683, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackRange
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174609530206981683, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1278329159}
+    - target: {fileID: 7174609530206981683, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174609530206981683, guid: 5e3a2de614c100c4398a33002f67fb1f, type: 3}
+      propertyPath: monstersLayer.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

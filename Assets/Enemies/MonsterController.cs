@@ -94,6 +94,8 @@ public class MonsterController : MonoBehaviour
     
     public void DealDamage()
     {
+        if (!currentDefense)
+            return;
         if (currentDefense.GetComponent<DefensiveStructure>())
             currentDefense.GetComponent<DefensiveStructure>().TakeDamage(damage);
         else if (currentDefense.GetComponent<BaseController>())
@@ -128,6 +130,7 @@ public class MonsterController : MonoBehaviour
         health -= damage;
         if (health <= 0 && !animator.GetBool("died"))
         {
+            gameObject.layer = LayerMask.NameToLayer("Default");
             animator.SetBool("died", true);
             ShowCoinPopup(gameObject.transform.position, this.coins);
             gameManager.updateMoney(this.coins, true);

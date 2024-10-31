@@ -13,10 +13,13 @@ public class ArrowController : MonoBehaviour
     private Vector3 center;
     public float damage;
 
+    private float _destroyDelay = 10f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         LaunchArrow();
+        DestroyAfterDelay();
     }
 
     private void Update()
@@ -165,5 +168,14 @@ public class ArrowController : MonoBehaviour
     bool ContainsNaN(Vector3 vector)
     {
         return float.IsNaN(vector.x) || float.IsNaN(vector.y) || float.IsNaN(vector.z);
+    }
+
+    void DestroyAfterDelay()
+    {
+        Invoke(nameof(DestroyArrow), _destroyDelay);
+    }
+    void DestroyArrow()
+    {
+        Destroy(gameObject);
     }
 }

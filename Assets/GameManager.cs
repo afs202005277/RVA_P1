@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject currentCastle;
 
+    private float _growthFactor = 1.1f;
+
     void Start()
     {
         Time.timeScale = 1f;
@@ -67,7 +69,7 @@ public class GameManager : MonoBehaviour
 
     public int getNumMonstersRound()
     {
-        return monsterPerRound + (currentRound-1); // TODO: the number of max monsters created in each round should depend on the round number
+        return (int)((monsterPerRound + currentRound - 1) * Math.Pow(_growthFactor, currentRound - 1));
     }
 
     public void killMonster()
