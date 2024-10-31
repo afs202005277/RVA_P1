@@ -130,6 +130,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 384873422390689014, guid: e110b8ac09328eb4191f938df01a0bd3, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 333093833}
     - target: {fileID: 1850847926812091435, guid: e110b8ac09328eb4191f938df01a0bd3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -409,6 +413,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -7562043790927091190, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 333093833}
     - target: {fileID: 1850847926812091435, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1265,6 +1273,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5387125096275373197, guid: b1924c7176862e04487dc591156b2a7d, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 333093833}
     - target: {fileID: 5619566128911661621, guid: b1924c7176862e04487dc591156b2a7d, type: 3}
       propertyPath: m_Name
       value: Base_L1
@@ -1291,6 +1303,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 760412235945442293, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 333093833}
     - target: {fileID: 1850847926812091435, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2057,6 +2073,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1310989931636122879, guid: 890ef948d13305946b6e9f22320ff876, type: 3}
+      propertyPath: gameOverScreen
+      value: 
+      objectReference: {fileID: 333093833}
     - target: {fileID: 1850847926812091435, guid: 890ef948d13305946b6e9f22320ff876, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
