@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 5420192111092298918}
   - component: {fileID: -2855174864685484424}
   - component: {fileID: 639171414545353717}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SciFiPlaceTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}

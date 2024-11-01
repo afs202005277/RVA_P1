@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 1140501002948644219}
   - component: {fileID: 7402670943525155001}
   - component: {fileID: 3377613061742261401}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ScifiWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}

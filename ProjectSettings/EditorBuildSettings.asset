@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Medieval.unity
     guid: 7243e141b3133284f8a0d1f2f80dbb56
   - enabled: 0
@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SettingsMenu.unity
     guid: fb90796d13093374d9b989f6ef52b531
+  - enabled: 1
+    path: Assets/Scenes/SciFi.unity
+    guid: f9ce993c0a840ff4b8bf029d16e848eb
   m_configObjects: {}
