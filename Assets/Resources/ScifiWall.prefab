@@ -530,6 +530,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5629234171235314492, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
+      propertyPath: m_TagString
+      value: Archer
+      objectReference: {fileID: 0}
     - target: {fileID: 7996694304809973685, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -549,13 +553,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5629234171235314492, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 187911342240730883}
   m_SourcePrefab: {fileID: 100100000, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
 --- !u!4 &5948938559317780968 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4995862028830175622, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
   m_PrefabInstance: {fileID: 1718754455186987118}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6468629994950292306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5629234171235314492, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
+  m_PrefabInstance: {fileID: 1718754455186987118}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &187911342240730883
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6468629994950292306}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.869312, y: 2.8878474, z: 6.256195}
+  m_Center: {x: -0.0044690073, y: 0.55208445, z: 0.0984162}
 --- !u!1001 &1992355146139138459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -567,6 +600,10 @@ PrefabInstance:
     - target: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
       propertyPath: m_Name
       value: Truck05
+      objectReference: {fileID: 0}
+    - target: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
+      propertyPath: m_TagString
+      value: Archer
       objectReference: {fileID: 0}
     - target: {fileID: 6426345351701133460, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
       propertyPath: m_LocalRotation.w
@@ -643,13 +680,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1481395996343982086}
   m_SourcePrefab: {fileID: 100100000, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
 --- !u!4 &5087421120966965269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6718353583735390606, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
   m_PrefabInstance: {fileID: 1992355146139138459}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5607533640041783983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
+  m_PrefabInstance: {fileID: 1992355146139138459}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1481395996343982086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5607533640041783983}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.869312, y: 2.8878474, z: 6.256195}
+  m_Center: {x: -0.0044690073, y: 0.55208445, z: 0.0984162}
 --- !u!1001 &2036480658978810004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1216,6 +1282,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck05 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
+      propertyPath: m_TagString
+      value: Archer
+      objectReference: {fileID: 0}
     - target: {fileID: 6426345351701133460, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -1291,13 +1361,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4103711872230685185}
   m_SourcePrefab: {fileID: 100100000, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
 --- !u!4 &7033041029618938704 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6718353583735390606, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
   m_PrefabInstance: {fileID: 4370184272127619806}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7697127995049208298 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6230644673282906932, guid: fa32556a4e4f44aa98409db075d828e7, type: 3}
+  m_PrefabInstance: {fileID: 4370184272127619806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &4103711872230685185
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7697127995049208298}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.869312, y: 2.8878474, z: 6.256195}
+  m_Center: {x: -0.0044690073, y: 0.55208445, z: 0.0984162}
 --- !u!1001 &4714220352645346720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1518,6 +1617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Truck04
       objectReference: {fileID: 0}
+    - target: {fileID: 5629234171235314492, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
+      propertyPath: m_TagString
+      value: Archer
+      objectReference: {fileID: 0}
     - target: {fileID: 7996694304809973685, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
@@ -1537,13 +1640,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5629234171235314492, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6441225010866641546}
   m_SourcePrefab: {fileID: 100100000, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
 --- !u!4 &1467634238280654759 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4995862028830175622, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
   m_PrefabInstance: {fileID: 5839703736097943073}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2239913254436144413 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5629234171235314492, guid: 80a375345daf746b0a62bed0bcf073ed, type: 3}
+  m_PrefabInstance: {fileID: 5839703736097943073}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6441225010866641546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2239913254436144413}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.869312, y: 2.8878474, z: 6.256195}
+  m_Center: {x: -0.0044690073, y: 0.55208445, z: 0.0984162}
 --- !u!1001 &6299179739554633535
 PrefabInstance:
   m_ObjectHideFlags: 0

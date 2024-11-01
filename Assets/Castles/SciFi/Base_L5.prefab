@@ -83,8 +83,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4418134880122780486}
-  - {fileID: 9123205484765684797}
+  - {fileID: 6584853895900447169}
+  - {fileID: 4646075094613232134}
   - {fileID: 4890545658576335431}
   - {fileID: 6620360496336695384}
   - {fileID: 2986264111655783070}
@@ -508,7 +508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
       propertyPath: m_Name
-      value: SciFiPlaceTower (3)
+      value: SciFiPlaceTower (2)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -519,6 +519,162 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
   m_PrefabInstance: {fileID: 641430191981364961}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &811290800581377696
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5273703805683427034}
+    m_Modifications:
+    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: attackRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: attackCooldown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20000002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.935
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.044
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.68762
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.72607076
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 93.116
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_Name
+      value: SciFiPlaceTower (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+--- !u!4 &4646075094613232134 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+  m_PrefabInstance: {fileID: 811290800581377696}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1178392494740190567
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5273703805683427034}
+    m_Modifications:
+    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: attackRange
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: attackCooldown
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.19999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.08586755
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.261
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.007785907
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7327225
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.68052757
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -85.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+      propertyPath: m_Name
+      value: SciFiPlaceTower
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+--- !u!4 &6584853895900447169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
+  m_PrefabInstance: {fileID: 1178392494740190567}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1213819924836418814
 PrefabInstance:
@@ -578,7 +734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
       propertyPath: m_Name
-      value: SciFiPlaceTower (4)
+      value: SciFiPlaceTower (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1034,7 +1190,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
       propertyPath: m_Name
-      value: SciFiPlaceTower (8)
+      value: SciFiPlaceTower (7)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1045,76 +1201,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
   m_PrefabInstance: {fileID: 3434592827018998661}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &3865292500283248795
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5273703805683427034}
-    m_Modifications:
-    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: attackCooldown
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.934
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.261
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.063
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.68762
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.72607076
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 93.116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_Name
-      value: SciFiPlaceTower (2)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
---- !u!4 &9123205484765684797 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-  m_PrefabInstance: {fileID: 3865292500283248795}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3990868272213460680
 PrefabInstance:
@@ -1330,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
       propertyPath: m_Name
-      value: SciFiPlaceTower (6)
+      value: SciFiPlaceTower (5)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2016,7 +2102,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
       propertyPath: m_Name
-      value: SciFiPlaceTower (5)
+      value: SciFiPlaceTower (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2164,7 +2250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
       propertyPath: m_Name
-      value: SciFiPlaceTower (7)
+      value: SciFiPlaceTower (6)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2253,76 +2339,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4691441581925644113, guid: 7c1e853eb082e465d9eccd07bac0fbd5, type: 3}
   m_PrefabInstance: {fileID: 8472667533594267847}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &8532133549589712864
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 5273703805683427034}
-    m_Modifications:
-    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: attackRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 639171414545353717, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: attackCooldown
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.085
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.261
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.017
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.68762
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.72607076
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -93.116
-      objectReference: {fileID: 0}
-    - target: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7151361115144458659, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-      propertyPath: m_Name
-      value: SciFiPlaceTower (1)
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
---- !u!4 &4418134880122780486 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5420192111092298918, guid: 73cb4e2aed918e14ba600550db801ea2, type: 3}
-  m_PrefabInstance: {fileID: 8532133549589712864}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8801822194413137854
 PrefabInstance:
