@@ -43,6 +43,7 @@ public class BallController : MonoBehaviour
         if (direction != Vector3.zero)
         {
             transform.position += direction * speed * Time.deltaTime;
+            transform.rotation = Quaternion.LookRotation(direction) * Quaternion.Euler(-90, 0, 0);
         }
     }
 
