@@ -12079,7 +12079,7 @@ MonoBehaviour:
   currentRound: 1
   monsterPerRound: 1
   difficultyConfig: {}
-  maxDefenses: 2
+  maxDefenses: 4
   currentCastle: {fileID: 0}
 --- !u!4 &1278329160
 Transform:
