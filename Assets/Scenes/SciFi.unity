@@ -527,9 +527,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 333093833}
     - target: {fileID: 1265000865666988888, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265000865666988888, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 1265000865666988888, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1265000865666988888, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackCooldown
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1850847926812091435, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -587,21 +599,65 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2787799524012684381, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackRange
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2787799524012684381, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 2787799524012684381, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044458281540788813, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3044458281540788813, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 3044458281540788813, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3044458281540788813, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackCooldown
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463910532494839431, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3463910532494839431, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 3463910532494839431, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3463910532494839431, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackCooldown
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987031101493130843, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3987031101493130843, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 3987031101493130843, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3987031101493130843, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackCooldown
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5619566128911661621, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: m_Name
       value: Base_L4
@@ -611,9 +667,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6711626407764521905, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackRange
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711626407764521905, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 6711626407764521905, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711626407764521905, guid: f364ff18d8f3bdd4fbf7abc84a3c008d, type: 3}
+      propertyPath: attackCooldown
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -945,7 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 259007601}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 858600705}
@@ -1128,7 +1196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 259007601}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 1612938479}
@@ -2263,12 +2331,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 15791596969512212, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackCooldown
-      value: 10
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 260227655666677077, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
+      propertyPath: attackRange
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 260227655666677077, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 260227655666677077, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
+      propertyPath: attackDamage
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 260227655666677077, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
+      propertyPath: attackCooldown
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 760412235945442293, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: gameOverScreen
       value: 
@@ -2287,12 +2367,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1731231402393194251, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackCooldown
-      value: 12
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766737858925100690, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
+      propertyPath: attackRange
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1766737858925100690, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 259007601}
+    - target: {fileID: 1766737858925100690, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
+      propertyPath: attackCooldown
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1850847926812091435, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -2363,7 +2451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2843131431765227632, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackCooldown
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3808909822067905981, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackRange
@@ -2379,7 +2467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3808909822067905981, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackCooldown
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4430007179974679406, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackRange
@@ -2419,7 +2507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7680880785304663501, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackCooldown
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8973115331245068145, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackRange
@@ -2435,7 +2523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8973115331245068145, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackCooldown
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9130750559470715925, guid: 0f21644c3e6d99d44b088702a1fd3fea, type: 3}
       propertyPath: attackRange
@@ -3344,7 +3432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 259007601}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 251062360}
@@ -8522,7 +8610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 259007601}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 602155460}
@@ -10002,7 +10090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnRadius: 4
-  spawnRate: 3
+  spawnRate: 1
   gameManager: {fileID: 259007601}
   coinPopupPrefab: {fileID: 348034102632639983, guid: de5c7e6732fba0044a9d34a277b7156b, type: 3}
   terrain: {fileID: 372340583}
