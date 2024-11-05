@@ -39,6 +39,7 @@ public abstract class DefensiveStructure : MonoBehaviour
 
     void Start()
     {
+        gameManager.AddDefense(gameObject);
         Initialize();
     }
 
@@ -118,6 +119,7 @@ public abstract class DefensiveStructure : MonoBehaviour
 
     protected virtual void DestroyObject()
     {
+        Debug.Log("Here");
         gameManager.RemoveDefense(gameObject);
         gameManager.DestroyDefense(gameObject);
         gameObject.layer = LayerMask.NameToLayer("Default");
